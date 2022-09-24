@@ -1,16 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from 'styled-normalize';
+import { corPrincipal } from "./variables";
 
 export const GlobalStyle = createGlobalStyle`
     ${normalize}
     * {
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Mark Pro', sans-serif;
     font-weight: 400;
     font-size: 16px;
     margin: 0;
     padding: 0;
     text-decoration: none;
+    color: ${corPrincipal};
     
     h1 {
         font-size: 60px;
