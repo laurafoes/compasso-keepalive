@@ -1,4 +1,4 @@
-import { Button } from "./FootenBtnElements"
+import { Button } from "./FooterBtnElements"
 
 interface Props {
     variant: boolean,

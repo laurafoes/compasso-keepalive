@@ -15,9 +15,12 @@ export const Header = styled.nav`
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;`
+    justify-content: space-between;
+    padding-top: 1.56rem;
+`
+
 export const Logo = styled.img`
-    margin: 1.5rem 2.5rem;
+    margin: 0 2.5rem;
     width: 150px;
     height: 42px;
 `
@@ -28,7 +31,7 @@ export const Body = styled.main`
     justify-content: flex-end;
     background-image: url(${compasso});
     background-size: 825px 825px;
-    background-position-y: 1rem;
+    background-position-y: 3.5rem;
     background-position-x: -7.5rem;
     background-repeat: no-repeat;
 `

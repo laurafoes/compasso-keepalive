@@ -21,4 +21,6 @@ export const TimerWrapper = styled.div`
 
 export const Contador = styled.h5`
     font-weight: 700;
+    margin-top: -0.5rem;
+    line-height: 36px;
 `

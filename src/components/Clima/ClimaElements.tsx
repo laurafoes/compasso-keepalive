@@ -5,7 +5,7 @@ import { corSecundaria } from '../../assets/styles/variables';
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 1.5rem 2.5rem;
+    margin: 0 2.5rem;
 `
 
 export const Cidade = styled.p`
