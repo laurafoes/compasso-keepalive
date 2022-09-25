@@ -28,5 +28,8 @@ export const GlobalStyle = createGlobalStyle`
     h4 {
         font-size: 30px; 
     }
+    h5 {
+        font-size: 48px;
+    }
     }
 `
