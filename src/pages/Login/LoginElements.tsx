@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import logo_image from '../../assets/img/login-image.png';
-import { fundoPrincipal } from '../../assets/styles/variables';
+import { fundoLogin } from '../../assets/styles/variables';
 
 export const Container = styled.div`
     height: 100vh;
     width: 100vw;
-    background: ${fundoPrincipal};
+    background: ${fundoLogin};
     display: flex;
     align-items: center;
 `
