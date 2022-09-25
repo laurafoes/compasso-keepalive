@@ -6,13 +6,16 @@ import { Timer } from '../../components/Timer';
 import { FooterBtn } from '../../components/FooterButton';
 import { DisplayData } from '../../components/DisplayData';
 import { Clima } from '../../components/Clima';
+import { WidgetDataProvider } from '../../common/context/WidgetData';
 
 export const Home = () => {
     return(
         <Container>
             <Header>
                 <Logo src={logo} />
-                <DisplayData />
+                <WidgetDataProvider>
+                    <DisplayData />
+                </WidgetDataProvider>
                 <Clima />
             </Header>
             <Body>
