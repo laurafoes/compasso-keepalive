@@ -13,9 +13,8 @@ export const Login = () => {
                     <p>Para continuar navegando de forma segura, efetue o login na rede.</p>
                 </FormTitle>
                 <UserInfoProvider>
-                    <LoginForm />
+                <LoginForm />
                 </UserInfoProvider>
-                <Link  to="/home">Home page</Link>
             </FormContainer>
             <Banner>
                 <Logo src={logo} />

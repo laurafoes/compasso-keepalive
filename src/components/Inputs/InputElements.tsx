@@ -9,7 +9,8 @@ interface Props {
 }
 
 export const Container = styled.div`
-    width: 379px;
+    width: 100%;
+    max-width: 379px;
     position: relative;
     `
 
@@ -21,7 +22,7 @@ export const Input = styled.input<Props>`
     background-color: transparent;
     display: flex;
     align-items: center;
-    margin-bottom: 1.9rem;
+    margin-bottom: 2.7vh;
     padding: 20px;
     &::placeholder {
         color: white;

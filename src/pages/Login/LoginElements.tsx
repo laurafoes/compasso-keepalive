@@ -11,16 +11,22 @@ export const Container = styled.div`
 `
 export const FormContainer = styled.div`
     width: 50%;
+    height: 63.4vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 `
 
 export const FormTitle = styled.div `
+    display: flex;
+    flex-direction: column;
     text-align: left;
+    width: 70%;
     max-width: 379px;
     margin: 0 auto;
-    margin-bottom: 8rem;
+    h1{ 
+        line-height: 76px;
+    }
     p {
         max-width: 80%;
     }

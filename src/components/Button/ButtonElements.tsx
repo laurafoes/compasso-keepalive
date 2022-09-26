@@ -17,7 +17,8 @@ export const Botao = styled.button<Props>`
     filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.5));
     /* transition: ease-in-out 300ms; */
     cursor: pointer;
-    margin-top: ${({existeErro}) => existeErro ? "4.5rem" : "7rem" };
+    align-self: flex-end;
+    /* margin-top: ${({existeErro}) => existeErro ? "3.7vh" : "7.4vh" }; */
     /* margin-top: 7rem; */
     &:hover {
         /* transform: scale(1.02); */
