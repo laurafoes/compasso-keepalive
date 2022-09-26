@@ -1,9 +1,9 @@
 import { Container, Data, Hora } from "./DisplayDataElements"
 import { useContext, useEffect } from 'react';
 import { WidgetDataContext } from "../../common/context/WidgetData";
-import { PropsWidgetDataContext, WidgetDataContextProps } from "../interfaces/WidgetData";
+import { PropsWidgetDataContext } from "../interfaces/WidgetData";
 
-export const DisplayData = ({ children }: WidgetDataContextProps) => {
+export const DisplayData = () => {
     const { dataHora, setDataHora } = useContext<PropsWidgetDataContext>(WidgetDataContext);
 
     function obtemDataEHora() {
@@ -12,7 +12,6 @@ export const DisplayData = ({ children }: WidgetDataContextProps) => {
         const horaCompleta = new Date().toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' });
 
         setDataHora({ data: dataCompleta, hora: horaCompleta })
-        console.log( dataCompleta);
     }
 
     useEffect(() => {
@@ -27,8 +26,8 @@ export const DisplayData = ({ children }: WidgetDataContextProps) => {
 
     return(
         <Container>
-                <Hora>{ dataHora.hora } </Hora>
-                <Data>{ dataHora.data } </Data>
+                <Hora>{dataHora.hora} </Hora>
+                <Data>{dataHora.data} </Data>
         </Container>
     )
 }
