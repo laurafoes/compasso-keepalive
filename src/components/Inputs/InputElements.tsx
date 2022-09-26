@@ -5,7 +5,8 @@ import { corErro } from '../../assets/styles/variables';
 
 interface Props {
     existeErro?: boolean,
-    icone?: boolean
+    icone?: boolean,
+    user?: string
 }
 
 export const Container = styled.div`
@@ -23,7 +24,9 @@ export const Input = styled.input<Props>`
     display: flex;
     align-items: center;
     margin-bottom: 2.7vh;
-    padding: 20px;
+    height: 5.5vh;
+    padding-left: 1rem;
+    font-size: ${({user}) => !user ? '16px' : '56px'};
     &::placeholder {
         color: white;
     }
