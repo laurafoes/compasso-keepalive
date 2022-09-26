@@ -13,9 +13,15 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     text-decoration: none;
     color: ${corPrincipal};
+    @media screen and (max-width: 300px) {
+       font-size: 14px;
+    }
     
     h1 {
         font-size: 60px;
+        @media screen and (max-width: 300px) {
+            font-size: 46px;
+        }
     }
     h2 {
         font-size: 64px;
@@ -27,6 +33,9 @@ export const GlobalStyle = createGlobalStyle`
     }
     h4 {
         font-size: 30px; 
+        @media screen and (max-width: 300px) {
+            font-size: 26px;
+        }
     }
     h5 {
         font-size: 48px;

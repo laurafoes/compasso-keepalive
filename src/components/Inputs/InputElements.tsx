@@ -38,6 +38,11 @@ export const UserIcon = styled(AiOutlineUser)<Props>`
     right: ${({icone}) => icone ? "2rem" : "-2.25rem" };
     top: 0.75rem;
     font-size: 26px;
+    @media screen and (max-width: 768px) {
+    right: ${({icone}) => icone ? "2rem" : "-2rem" };
+       font-size: 20px;
+       top: 0.7rem;
+    }
 `
 export const PasswordIcon = styled(TiLockClosedOutline)<Props>`
     position: absolute;
@@ -45,6 +50,11 @@ export const PasswordIcon = styled(TiLockClosedOutline)<Props>`
     right: ${({icone}) => icone ? "2rem" : "-2.5rem" };
     top: 0.75rem;
     font-size: 32px;
+    @media screen and (max-width: 768px) {
+       right: ${({icone}) => icone ? "2rem" : "-2rem" };
+       font-size: 24px;
+       top: 0.5rem;
+    }
 `
 export const MensagemErro = styled.p<Props>`
     text-align: center;
