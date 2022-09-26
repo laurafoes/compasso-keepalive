@@ -8,6 +8,10 @@ export const Container = styled.div`
     background: ${fundoLogin};
     display: flex;
     align-items: center;
+    @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+}
 `
 export const FormContainer = styled.div`
     width: 50%;
@@ -15,6 +19,11 @@ export const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 80vh;
+        justify-content: space-evenly;
+}
 `
 
 export const FormTitle = styled.div `
@@ -25,7 +34,7 @@ export const FormTitle = styled.div `
     max-width: 379px;
     margin: 0 auto;
     h1{ 
-        line-height: 76px;
+        line-height: 1px;
     }
     p {
         max-width: 80%;
@@ -38,10 +47,17 @@ export const Banner = styled.div `
     background-image: url(${logo_image});
     background-size: cover;
     text-align: center;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 20vh;
+}
 `
 
 export const Logo = styled.img`
     width: 306px;
     height: 69px;
     margin-top: 2.1rem;
+    @media screen and (max-width: 768px) {
+        width: 80%;
+}
 `

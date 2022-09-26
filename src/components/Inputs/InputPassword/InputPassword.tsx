@@ -21,6 +21,7 @@ export const InputPassword = () => {
                 className="password_size"
                 onChange={((e: any) => handleChange(e))}
                 existeErro={existeErro}
+                user={user.password}
             >
             </Input>
             <PasswordIcon icone={icone.password}>

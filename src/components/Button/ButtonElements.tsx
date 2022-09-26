@@ -8,19 +8,17 @@ interface Props {
 export const Botao = styled.button<Props>`
     font-size: 18px;
     font-weight: 700;
-    padding: 23px;
+    height: 6.2vh;
     background-color: ${corDestaque};
     border-radius: 50px;
     width: 100%;
     text-align: center;
     box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
     filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.5));
-    /* transition: ease-in-out 300ms; */
+    transition: ease-in-out 300ms;
     cursor: pointer;
     align-self: flex-end;
-    /* margin-top: ${({existeErro}) => existeErro ? "3.7vh" : "7.4vh" }; */
-    /* margin-top: 7rem; */
     &:hover {
-        /* transform: scale(1.02); */
+        transform: scale(1.01);
     }
 `
