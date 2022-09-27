@@ -5,9 +5,11 @@ import { Cidade, ClimaWrapper, Container, Icone, Temperatura } from './ClimaElem
 
 export const Clima = () => {
     const [ temperatura, setTemperatura ] = useState<number>(0);
-    const [ cidade, setCidade ] = useState<string>('');
+    const [ cidade, setCidade ] = useState<string>('Procurando...');
+
+    // const api = process.env.REACT_APP_API;
      
-    useEffect(() => {
+    useEffect(() => {   
         navigator.geolocation.getCurrentPosition(async function (position) {
             let latitude = position.coords.latitude;
             let longidute = position.coords.longitude;
@@ -15,7 +17,7 @@ export const Clima = () => {
             axios.get(`https://api.openweathermap.org/data/2.5/weather/?lat=${latitude}&lon=${longidute}&units=metric&APPID=e75376c3fdfbe9b424e6194dc179030c`)
                 .then(res => res.data)
                 .then(res => {
-                    const { main, name, id } = res;
+                    const { main, name } = res;
                     setCidade(`${name} - SC`);
                     setTemperatura(Math.round(main.temp));
                 });
