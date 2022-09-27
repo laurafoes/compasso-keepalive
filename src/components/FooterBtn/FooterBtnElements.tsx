@@ -6,12 +6,15 @@ interface Props {
 }
 
 export const Button = styled.button<Props>`
-    height: 100%;
-    width: 8.15rem;
+    height: 9.26vh;
+    width: 50%;
     font-size: 12px;
-    margin: 0;
+    margin-top: 0px;
     border: none;
     cursor: pointer;
     color: ${({variant}) => variant ? corDestaque : corPrincipal };
     background-color: ${({variant}) => variant ? "white" : "transparent"};
+    @media screen and (max-width: 480px) {
+        height: 8rem;
+    }
 `

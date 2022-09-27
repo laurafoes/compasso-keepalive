@@ -5,24 +5,69 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
     text-align: right;
-    width: 52.55vw;
+    align-items: flex-end;
+    margin: 0;
+    width: 65%;
+    @media screen and (max-width: 1280px) {
+        width: 90%;
+        margin-top: -3rem;
+    }
+    @media screen and (max-width: 1024px) {
+        width: 90%;
+        margin-top: -3rem;
+    }
+    @media screen and (max-width: 480px) {
+        margin-top: -4rem;
+    }
 `
 
 export const Destaque = styled.h3`
     color: ${corDestaque};
     font-weight: 700;
-    line-height: 46px;
+    font-size: 36px;
+    line-height: 4.25vh;
+    @media screen and (max-width: 1024px) {
+        font-size: 28px;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 24px;
+    }
+    @media screen and (max-width: 480px) {
+        font-size: 20px;
+    }
 `
 
 export const Traducao = styled.p`
     color: ${corSecundaria};
-    font-size: 24px;
+    font-size: 30px;
     line-height: 30px;
+    @media screen and (max-width: 1024px) {
+        font-size: 22px;
+        line-height: 22px;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 18px;
+    }
+    @media screen and (max-width: 480px) {
+            font-size: 16px;
+            line-height: 16px;
+    }
 `
 export const DestaqueGrande = styled.h2`
     color: ${corDestaque};
     font-weight: 700;
+    font-size: 64px;
     line-height: 81px;
+    @media screen and (max-width: 1024px) {
+        font-size: 42px;
+        line-height: 52px;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 32px;
+    }
+    @media screen and (max-width: 480px) {
+        font-size: 24px;
+        line-height: 40px;
+    }
 `

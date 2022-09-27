@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import logo from '../../assets/img/logo-light.svg';
 import { LoginForm } from '../../components/LoginForm';
 import { Container, FormContainer, Banner, FormTitle, Logo } from './LoginElements';

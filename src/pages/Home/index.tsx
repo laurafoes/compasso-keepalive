@@ -20,9 +20,6 @@ export const Home = () => {
             </Header>
             <Body>
                 <Missao />
-                Home
-                <Link to="/">Login page</Link>
-
             </Body>
             <Footer>
                 <Disclaimer>
