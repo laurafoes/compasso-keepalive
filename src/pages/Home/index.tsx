@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Body, Container, Disclaimer, Footer, FooterBtnWrapper, FooterNavigation, Header, Logo } from './HomeElements';
 import logo from '../../assets/img/logo-compasso-dark.svg';
 import { Missao } from '../../components/Missao';
@@ -9,6 +9,7 @@ import { Clima } from '../../components/Clima';
 import { WidgetDataProvider } from '../../common/context/WidgetData';
 
 export const Home = () => {
+    const navigateTo = useNavigate();
     return(
         <Container>
             <Header>
@@ -28,9 +29,7 @@ export const Home = () => {
                 <FooterNavigation>
                     <Timer />
                     <FooterBtnWrapper>
-                        <a href="http://google.com" target="_blank" rel="noreferrer">
-                            <FooterBtn variant={true}>Continuar navegando</FooterBtn>
-                        </a>
+                        <FooterBtn variant={true} onClick={() => navigateTo("/")}>Continuar navegando</FooterBtn>
                         <Link to="/">
                             <FooterBtn variant={false}>Logout</FooterBtn>
                         </Link>

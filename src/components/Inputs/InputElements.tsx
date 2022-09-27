@@ -35,33 +35,33 @@ export const Input = styled.input<Props>`
 export const UserIcon = styled(AiOutlineUser)<Props>`
     position: absolute;
     transition: ease 300ms;
-    right: ${({icone}) => icone ? "2rem" : "-2.25rem" };
-    top: 0.75rem;
+    right: ${({icone}) => icone ? "1.5vw" : "-5vh" };
+    top: 1.2vh;
     font-size: 26px;
     @media screen and (max-width: 1440px){
         top: 0.6rem;
     }
     @media screen and (max-width: 768px) {
-    right: ${({icone}) => icone ? "2rem" : "-2rem" };
-       font-size: 20px;
-       top: 0.7rem;
+        right: ${({icone}) => icone ? "1.5vw" : "-5vh" };
+        font-size: 20px;
+        top: 0.7rem;
     }
 `
 export const PasswordIcon = styled(TiLockClosedOutline)<Props>`
     position: absolute;
     transition: ease 300ms;
-    right: ${({icone}) => icone ? "2rem" : "-2.5rem" };
-    top: 0.75rem;
+    right: ${({icone}) => icone ? "1.4vw" : "-5.5vh" };
+    top: 1.1vh;
     font-size: 32px;
     @media screen and (max-width: 1440px){
         top: 0.6rem;
-        right: ${({icone}) => icone ? "2rem" : "-2.4rem" };
+        right: ${({icone}) => icone ? "1.5vw" : "-5vh" };
         font-size: 30px;
     }
     @media screen and (max-width: 768px) {
-       right: ${({icone}) => icone ? "2rem" : "-2rem" };
-       font-size: 24px;
-       top: 0.5rem;
+        right: ${({icone}) => icone ? "1.5vw" : "-5vh" };
+        font-size: 20px;
+        top: 0.5rem;
     }
 `
 export const MensagemErro = styled.p<Props>`

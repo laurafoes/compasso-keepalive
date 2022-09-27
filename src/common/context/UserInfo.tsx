@@ -14,7 +14,7 @@ const valorInicial = {
         email: false,
         password: false,
     },
-    setIcone: (e: any) => {}
+    setIcone: () => {}
 }
 
 export const UserInfoContext = createContext<PropsUserContext>(valorInicial);
