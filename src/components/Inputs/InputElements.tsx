@@ -27,6 +27,7 @@ export const Input = styled.input<Props>`
     margin-bottom: 2.7vh;
     height: 5.5vh;
     padding-left: 1rem;
+    padding-right: 4rem;
     font-size: ${({user}) => !user ? '16px' : '56px'};
     &::placeholder {
         color: white;
