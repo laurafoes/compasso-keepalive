@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Body, Container, Disclaimer, Footer, FooterBtnWrapper, FooterNavigation, Header, Logo } from './HomeElements';
 import logo from '../../assets/img/logo-compasso-dark.svg';
 import { Missao } from '../../components/Missao';
