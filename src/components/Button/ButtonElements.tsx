@@ -11,6 +11,7 @@ export const Botao = styled.button<Props>`
     height: 6.2vh;
     background-color: ${corDestaque};
     border-radius: 50px;
+    border: none;
     width: 100%;
     text-align: center;
     box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
