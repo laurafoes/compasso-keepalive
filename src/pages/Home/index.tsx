@@ -9,7 +9,6 @@ import { Clima } from '../../components/Clima';
 import { WidgetDataProvider } from '../../common/context/WidgetData';
 
 export const Home = () => {
-    const navigateTo = useNavigate();
     return(
         <Container>
             <Header>
@@ -29,7 +28,9 @@ export const Home = () => {
                 <FooterNavigation>
                     <Timer />
                     <FooterBtnWrapper>
-                        <FooterBtn variant={true} onClick={() => navigateTo("/")}>Continuar navegando</FooterBtn>
+                        <a href="http://google.com" target="_blank">
+                            <FooterBtn variant={true}>Continuar navegando</FooterBtn>
+                        </a>
                         <Link to="/">
                             <FooterBtn variant={false}>Logout</FooterBtn>
                         </Link>
