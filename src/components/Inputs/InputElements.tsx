@@ -20,6 +20,7 @@ export const Input = styled.input<Props>`
     border-color: ${({existeErro}) => existeErro ? corErro : 'white' };
     border-width: 1px;
     border-radius: 50px;
+    outline: none;
     background-color: transparent;
     display: flex;
     align-items: center;
