@@ -6,6 +6,15 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
+    @media screen and (max-width: 915px) and (orientation: landscape) {
+        display: none;
+    }
+    @media screen and (max-width: 768px) {
+        margin-top: 0.5rem;
+    }
+    @media screen and (max-width: 480px) {
+       display: none;
+    }
 `
 
 export const Hora = styled.h1`
@@ -14,9 +23,13 @@ export const Hora = styled.h1`
     line-height: 120px;
     font-weight: 700;
     color: ${corSecundaria};
+    @media screen and (max-width: 1280px) {
+       font-size: 96px;
+       line-height: 76px;
+    }
     @media screen and (max-width: 768px) {
        font-size: 86px;
-       line-height: 80px;
+       line-height: 70px;
     }
     
 `
@@ -26,6 +39,10 @@ export const Data = styled.p`
     font-weight: 300;
     color: ${corSecundaria};
     @media screen and (max-width: 768px) {
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    @media screen and (max-width: 480px) {
+        line-height: 14px;
+        margin-bottom: 0.5rem;
     }
 `

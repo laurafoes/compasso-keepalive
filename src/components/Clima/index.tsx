@@ -31,8 +31,6 @@ export const Clima = () => {
 
             getLocation(latitude, longitude);   
         }, async function(error) {
-            console.log(error)
-
             let latitude =  -15.7801;
             let longitude = -47.9292;
 

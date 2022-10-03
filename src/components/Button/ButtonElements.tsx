@@ -22,4 +22,9 @@ export const Botao = styled.button<Props>`
     &:hover {
         transform: scale(1.01);
     }
+    @media screen and (max-width: 915px) and (orientation: landscape) {
+        font-size: 14px;
+        padding: 0.5rem 0 1.5rem 0;
+        margin-top: 3%;
+    }
 `

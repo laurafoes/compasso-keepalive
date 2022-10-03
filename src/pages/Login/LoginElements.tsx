@@ -11,7 +11,11 @@ export const Container = styled.div`
     @media screen and (max-width: 768px) {
         flex-direction: column-reverse;
         justify-content: space-between;
-}
+    }
+    @media screen and (max-width: 915px) and (orientation: landscape) {
+        flex-direction: row;
+    }
+
 `
 export const FormContainer = styled.div`
     width: 50%;
@@ -39,6 +43,15 @@ export const FormTitle = styled.div `
     p {
         max-width: 80%;
     }
+    @media screen and (max-width: 915px) and (orientation: landscape) {
+        h1{
+            font-size: 28px;
+            margin-top: 3%;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
 `
 
 export const Banner = styled.div `
@@ -50,7 +63,10 @@ export const Banner = styled.div `
     @media screen and (max-width: 768px) {
         width: 100%;
         height: 20vh;
-}
+    }
+    @media screen and (max-width: 915px) and (orientation: landscape) {
+        height: 100vh;
+    }
 `
 
 export const Logo = styled.img`
@@ -59,5 +75,9 @@ export const Logo = styled.img`
     margin-top: 2.1rem;
     @media screen and (max-width: 768px) {
         width: 80%;
-}
+    }
+    @media screen and (max-width: 915px) and (orientation: landscape) {
+        width: 50%;
+        height: auto;
+    }
 `

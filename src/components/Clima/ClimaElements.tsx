@@ -9,6 +9,9 @@ export const Container = styled.div`
     @media screen and (max-width: 768px) {
         margin: 0 1rem;
     }
+    @media screen and (max-width: 768px) {
+        margin: 0;
+    }
 `
 
 export const Cidade = styled.p`
@@ -21,7 +24,10 @@ export const ClimaWrapper = styled.div`
     display: flex;
     justify-content: center;
     @media screen and (max-width: 768px) {
-        justify-content: flex-start;
+        justify-content: center;
+    }
+    @media screen and (max-width: 480px) {
+        margin-top: -0.2rem;
     }
 `
 
@@ -39,5 +45,9 @@ export const Temperatura = styled.h5`
     font-weight: 700;
     @media screen and (max-width: 768px) {
         font-size: 36px;
+    }
+    @media screen and (max-width: 480px) {
+        font-size: 24px;
+        margin-top: 0.5rem;
     }
 `
