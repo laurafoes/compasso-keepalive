@@ -75,13 +75,16 @@ export const Body = styled.main`
     transition: ease 1000ms;
     @media screen and (max-width: 1440px) {
         background-size: 27vw 48.5vh;
-        background-position-y: 0;
+        background-position-y: 30vh;
         background-position-x: -6.1vw;
     }
     @media screen and (max-width: 1024px) {
         background-size: 27vw 48.5vh;
-        background-position-y: 0;
-        background-position-x: -6.1vw;
+        background-position-y: 30vh;
+        background-position-x: -3.1vw;
+    }
+    @media screen and (max-width: 1024px) and (orientation: landscape) {
+        height: 74.5%;
     }
     @media screen and (max-width: 915px) and (orientation: landscape) {
         height: 86vh;
@@ -107,16 +110,20 @@ export const Footer = styled.footer`
     display: flex;
     align-items: center;
     background: ${fundoFooter};
+    @media screen and (max-width: 1024px) and (orientation: landscape) {
+        height: 10%;
+    }
     @media screen and (max-width: 915px) and (orientation: landscape) {
         height: auto;
     }
     @media screen and (max-width: 768px) {
-        height: 15%;
+        height: 16%;
         flex-direction: column-reverse;
         justify-content: space-between;
     }
     @media screen and (max-width: 768px) and (orientation: landscape) {
         flex-direction: column-reverse;
+        
     }
     @media screen and (max-width: 480px) {
         height: auto;

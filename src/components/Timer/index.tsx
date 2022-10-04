@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Container, Mensagem, Contador, TimerWrapper } from "./TimerElements"
 
 export const Timer = () => {
-    const [ counter, setCounter ] = useState(600);
+    const [ counter, setCounter ] = useState(60);
     const navigateTo = useNavigate();
 
     useEffect(() => {
