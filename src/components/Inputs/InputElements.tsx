@@ -6,7 +6,8 @@ import { corErro } from '../../assets/styles/variables';
 interface Props {
     existeErro?: boolean,
     icone?: boolean,
-    user?: string
+    user?: string,
+    placeholder?: string
 }
 
 export const Container = styled.div`

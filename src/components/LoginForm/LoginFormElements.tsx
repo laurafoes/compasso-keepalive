@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Form = styled.div`
     width: 70%;
     max-width: 379px;
-    height: 37.5vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

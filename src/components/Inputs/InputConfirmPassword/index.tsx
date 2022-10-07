@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { PropsUserContext } from '../../interfaces/UserInfo';
 import { Container, Input, MensagemErro, PasswordIcon } from '../InputElements';
 
-export const InputPassword = () => {
-    const { user, setUser, erro, existeErro, icone, setIcone, tituloPagInicial } = useContext<PropsUserContext>(UserInfoContext);
+export const InputConfirmPassword = () => {
+    const { user, setUser, erro, existeErro, icone, setIcone } = useContext<PropsUserContext>(UserInfoContext);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUser({...user, [e.target.name]: e.target.value});
@@ -17,8 +17,8 @@ export const InputPassword = () => {
         <Container>
             <Input
                 type="password"
-                placeholder="Senha"
-                name="password"
+                placeholder="Confirmar senha"
+                name="confirmpassword"
                 className="password_size"
                 onChange={((e: any) => handleChange(e))}
                 existeErro={existeErro}
@@ -29,7 +29,7 @@ export const InputPassword = () => {
                 <FontAwesomeIcon icon="fa-regular fa-lock-keyhole" />
             </PasswordIcon>
             <MensagemErro>
-                {tituloPagInicial === 'Login' ? erro : ''}
+                {erro}
             </MensagemErro>
         </Container>
     )
