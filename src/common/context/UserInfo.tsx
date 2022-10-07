@@ -14,7 +14,10 @@ const valorInicial = {
         email: false,
         password: false,
     },
-    setIcone: () => {}
+    setIcone: () => {},
+    tituloPagInicial: 'Login',
+    setTituloPagInicial: () => {},
+    handleClick: () => {}
 }
 
 export const UserInfoContext = createContext<PropsUserContext>(valorInicial);
@@ -25,9 +28,18 @@ export const UserInfoProvider = ({ children }: UserContextProps) => {
     const [ existeErro, setExisteErro ] = useState(false);
     const [ erro, setErro ] = useState(valorInicial.erro);
     const [ icone, setIcone ] = useState(valorInicial.icone);
+    const [ tituloPagInicial, setTituloPagInicial ] = useState(valorInicial.tituloPagInicial);
+
+    const handleClick = (e: React.MouseEvent) => {
+        if(tituloPagInicial === 'Login') {
+            setTituloPagInicial('Cadastro');
+        } else {
+            setTituloPagInicial('Login')
+        }
+    }
 
     return (
-        <UserInfoContext.Provider value={{ user, setUser, existeErro, setExisteErro, erro, setErro, icone, setIcone }}>
+        <UserInfoContext.Provider value={{ user, setUser, existeErro, setExisteErro, erro, setErro, icone, setIcone, tituloPagInicial, setTituloPagInicial, handleClick }}>
             {children}
         </UserInfoContext.Provider>
     )

@@ -18,7 +18,10 @@ export interface PropsUserContext {
     erro: string,
     setErro: (newState: string) => void,
     icone: IIcone,
-    setIcone: (newState: IIcone) => void
+    setIcone: (newState: IIcone) => void,
+    tituloPagInicial: string,
+    setTituloPagInicial: (newState: string) => void,
+    handleClick: (e: React.MouseEvent) => void
 }
 
 export interface UserContextProps {
