@@ -11,3 +11,7 @@ export const fundoFooter = "linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%)"
 
 //Botoes
 export const fundoBotaoPrincipal = " linear-gradient(90deg, #FF2D04 0%, #C13216 100%);"
+
+//Icones senha
+export const senhaInvalida = "#f84434";
+export const senhaValida = "#68bc6c";
