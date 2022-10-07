@@ -5,12 +5,7 @@ import { PropsUserContext } from '../../interfaces/UserInfo';
 import { Container, Input, UserIcon } from '../InputElements';
 
 export const InputUser = () => {
-    const { user, setUser, existeErro, icone, setIcone } = useContext<PropsUserContext>(UserInfoContext);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUser({...user, [e.target.name]: e.target.value});
-        setIcone({...icone, [e.target.name]: true});
-    }
+    const { existeErro, icone, handleChange } = useContext<PropsUserContext>(UserInfoContext);
 
     return(
         <Container>

@@ -21,7 +21,8 @@ export interface PropsUserContext {
     setIcone: (newState: IIcone) => void,
     tituloPagInicial: string,
     setTituloPagInicial: (newState: string) => void,
-    handleClick: (e: React.MouseEvent) => void
+    handleClick: (e: React.MouseEvent) => void,
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export interface UserContextProps {

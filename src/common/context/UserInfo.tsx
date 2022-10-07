@@ -17,7 +17,8 @@ const valorInicial = {
     setIcone: () => {},
     tituloPagInicial: 'Login',
     setTituloPagInicial: () => {},
-    handleClick: () => {}
+    handleClick: () => {},
+    handleChange: () => {}
 }
 
 export const UserInfoContext = createContext<PropsUserContext>(valorInicial);
@@ -38,8 +39,13 @@ export const UserInfoProvider = ({ children }: UserContextProps) => {
         }
     }
 
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setUser({...user, [e.target.name]: e.target.value});
+        setIcone({...icone, [e.target.name]: true});
+    }
+
     return (
-        <UserInfoContext.Provider value={{ user, setUser, existeErro, setExisteErro, erro, setErro, icone, setIcone, tituloPagInicial, setTituloPagInicial, handleClick }}>
+        <UserInfoContext.Provider value={{ user, setUser, existeErro, setExisteErro, erro, setErro, icone, setIcone, tituloPagInicial, setTituloPagInicial, handleClick, handleChange }}>
             {children}
         </UserInfoContext.Provider>
     )

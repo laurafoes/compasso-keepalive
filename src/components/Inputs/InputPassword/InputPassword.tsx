@@ -1,4 +1,3 @@
-import React from 'react';
 import { useContext } from 'react';
 import { UserInfoContext } from '../../../common/context/UserInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,12 +5,8 @@ import { PropsUserContext } from '../../interfaces/UserInfo';
 import { Container, Input, MensagemErro, PasswordIcon } from '../InputElements';
 
 export const InputPassword = () => {
-    const { user, setUser, erro, existeErro, icone, setIcone, tituloPagInicial } = useContext<PropsUserContext>(UserInfoContext);
+    const { user, erro, existeErro, icone,  tituloPagInicial, handleChange } = useContext<PropsUserContext>(UserInfoContext);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUser({...user, [e.target.name]: e.target.value});
-        setIcone({...icone, [e.target.name]: true});
-    }
 
     return(
         <Container>
