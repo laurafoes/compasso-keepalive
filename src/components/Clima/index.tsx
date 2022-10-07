@@ -8,20 +8,24 @@ export const Clima = () => {
     const [ cidade, setCidade ] = useState<string>('Procurando...');
 
     // const api = process.env.REACT_APP_API;
-    
-    function getLocation(latitude: number, longitude: number) {
-        axios.get(`https://api.openweathermap.org/data/2.5/weather/?lat=${latitude}&lon=${longitude}&units=metric&APPID=e75376c3fdfbe9b424e6194dc179030c`)
-                .then(res => res.data)
-                .then(res => {
-                    const { main, name } = res;
-                    if(name == "Brasília"){
-                        setCidade(`${name} - DF`);
-                    } else {
-                        setCidade(`${name} - SC`);
-
-                    }
-                    setTemperatura(Math.round(main.temp));
-                });
+    async function getLocation(latitude: number, longitude: number) {
+        try {
+            axios.get(`https://api.hgbrasil.com/weather?format=json-cors&key=
+            ${import.meta.env.VITE_API_KEY}&lat=${latitude}&lon=${longitude}&
+            user_ip=remote`)
+            .then(res => res.data)
+            .then(res => {
+                console.log(latitude, longitude)
+                const { results } = res;
+                const cidadeEstado = results.city;
+                const cidadeUF = cidadeEstado.split(',');
+                const UF = cidadeUF[1];
+                        setCidade(`${results.city_name} - ${UF}`);
+                        setTemperatura(results.temp);
+                    });
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     useEffect(() => {   
@@ -31,8 +35,8 @@ export const Clima = () => {
 
             getLocation(latitude, longitude);   
         }, async function(error) {
-            let latitude =  -15.7801;
-            let longitude = -47.9292;
+            let latitude = -23.5489;
+            let longitude = -46.6388;
 
             getLocation(latitude, longitude); 
         });
