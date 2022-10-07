@@ -1,16 +1,20 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { BsCheck, BsX } from 'react-icons/bs'
+import { passwordContext } from '../../common/context/Password';
+import { PropsPasswordContext } from '../interfaces/Password';
 import { Container, Conteudo, Erro, Item, Titulo, Valido } from './RequisitosSenhaElements'
 
 export const RequisitosSenha = () => {
     const [checked, setChecked] = useState(false);
+    const { isMinSix, isUpper, isLower, isNumber, isSpecialChar  } = useContext<PropsPasswordContext>(passwordContext);
+
     return (
         <Container>
             <Titulo>
                 A senha deverá conter ao menos:
             </Titulo>
             <Item>
-                {checked ?
+                {isMinSix ?
                     <Valido><BsCheck /></Valido> :
                     <Erro><BsX /></Erro>
                 }
@@ -19,7 +23,7 @@ export const RequisitosSenha = () => {
                 </Conteudo>
             </Item>
             <Item>
-                {checked ?
+                {isUpper ?
                     <Valido><BsCheck /></Valido> :
                     <Erro><BsX /></Erro>
                 }
@@ -28,7 +32,7 @@ export const RequisitosSenha = () => {
                 </Conteudo>
             </Item>
             <Item>
-                {checked ?
+                {isLower ?
                     <Valido><BsCheck /></Valido> :
                     <Erro><BsX /></Erro>
                 }
@@ -37,7 +41,7 @@ export const RequisitosSenha = () => {
                 </Conteudo>
             </Item>
             <Item>
-                {checked ?
+                {isNumber ?
                     <Valido><BsCheck /></Valido> :
                     <Erro><BsX /></Erro>
                 }
@@ -46,7 +50,7 @@ export const RequisitosSenha = () => {
                 </Conteudo>
             </Item>
             <Item>
-                {checked ?
+                {isSpecialChar ?
                     <Valido><BsCheck /></Valido> :
                     <Erro><BsX /></Erro>
                 }
