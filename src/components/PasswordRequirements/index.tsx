@@ -1,62 +1,61 @@
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { BsCheck, BsX } from 'react-icons/bs'
 import { passwordContext } from '../../common/context/Password';
 import { PropsPasswordContext } from '../interfaces/Password';
-import { Container, Conteudo, Erro, Item, Titulo, Valido } from './RequisitosSenhaElements'
+import { Container, Content, Invalid, Item, Title, Valid } from './PasswordRequirementsElements.tsx'
 
-export const RequisitosSenha = () => {
-    const [checked, setChecked] = useState(false);
+export const PasswordRequirements = () => {
     const { isMinSix, isUpper, isLower, isNumber, isSpecialChar  } = useContext<PropsPasswordContext>(passwordContext);
 
     return (
         <Container>
-            <Titulo>
+            <Title>
                 A senha deverá conter ao menos:
-            </Titulo>
+            </Title>
             <Item>
                 {isMinSix ?
-                    <Valido><BsCheck /></Valido> :
-                    <Erro><BsX /></Erro>
+                    <Valid><BsCheck /></Valid> :
+                    <Invalid><BsX /></Invalid>
                 }
-                <Conteudo>
+                <Content>
                     6 caracteres
-                </Conteudo>
+                </Content>
             </Item>
             <Item>
                 {isUpper ?
-                    <Valido><BsCheck /></Valido> :
-                    <Erro><BsX /></Erro>
+                    <Valid><BsCheck /></Valid> :
+                    <Invalid><BsX /></Invalid>
                 }
-                <Conteudo>
+                <Content>
                     uma letra maiúscula
-                </Conteudo>
+                </Content>
             </Item>
             <Item>
                 {isLower ?
-                    <Valido><BsCheck /></Valido> :
-                    <Erro><BsX /></Erro>
+                    <Valid><BsCheck /></Valid> :
+                    <Invalid><BsX /></Invalid>
                 }
-                <Conteudo>
+                <Content>
                     uma letra minúscula
-                </Conteudo>
+                </Content>
             </Item>
             <Item>
                 {isNumber ?
-                    <Valido><BsCheck /></Valido> :
-                    <Erro><BsX /></Erro>
+                   <Valid><BsCheck /></Valid> :
+                   <Invalid><BsX /></Invalid>
                 }
-                <Conteudo>
+                <Content>
                     um número
-                </Conteudo>
+                </Content>
             </Item>
             <Item>
                 {isSpecialChar ?
-                    <Valido><BsCheck /></Valido> :
-                    <Erro><BsX /></Erro>
+                    <Valid><BsCheck /></Valid> :
+                    <Invalid><BsX /></Invalid>
                 }
-                <Conteudo>
+                <Content>
                     um caractere especial
-                </Conteudo>
+                </Content>
             </Item>
         </Container>
     )

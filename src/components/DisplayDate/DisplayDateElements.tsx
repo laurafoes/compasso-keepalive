@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { corSecundaria } from "../../assets/styles/variables";
+import { secondaryColor } from "../../assets/styles/variables";
 
 export const Container = styled.div`
     display: flex;
@@ -17,12 +17,12 @@ export const Container = styled.div`
     }
 `
 
-export const Hora = styled.h1`
+export const Hours = styled.h1`
     margin: 0px;
     font-size: 144px;
     line-height: 120px;
     font-weight: 700;
-    color: ${corSecundaria};
+    color: ${secondaryColor};
     @media screen and (max-width: 1280px) {
        font-size: 96px;
        line-height: 76px;
@@ -34,10 +34,10 @@ export const Hora = styled.h1`
     
 `
 
-export const Data = styled.p`
+export const CurrentDate = styled.p`
     font-size: 14px;
     font-weight: 300;
-    color: ${corSecundaria};
+    color: ${secondaryColor};
     @media screen and (max-width: 768px) {
         margin-bottom: 0.5rem;
     }

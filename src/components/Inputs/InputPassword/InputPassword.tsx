@@ -2,16 +2,16 @@ import { useEffect, useContext } from 'react';
 import { UserInfoContext } from '../../../common/context/UserInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { PropsUserContext } from '../../interfaces/UserInfo';
-import { Container, Input, MensagemErro, PasswordIcon } from '../InputElements';
+import { Container, ErrorMessage, Input, PasswordIcon } from '../InputElements';
 import { passwordContext } from '../../../common/context/Password';
 import { PropsPasswordContext } from '../../interfaces/Password';
 
 export const InputPassword = () => {
-    const { user, setUser, erro, existeErro, icone, setIcone, tituloPagInicial } = useContext<PropsUserContext>(UserInfoContext);
+    const { user, setUser, error, errorExists, icons, loginPageTitle, handleChange } = useContext<PropsUserContext>(UserInfoContext);
 
     const { setIsMinSix, setIsUpper, setIsLower, setIsNumber, setIsSpecialChar  } = useContext<PropsPasswordContext>(passwordContext);
     
-    const validar = ( userPassword: string ) => {
+    const validate = ( userPassword: string ) => {
         const checkLength = /^.{6,}$/;
         const checkUpper = /^.*[A-Z].*$/;
         const checkLower = /^.*[a-z].*$/;
@@ -48,14 +48,9 @@ export const InputPassword = () => {
             setIsSpecialChar(false)
         }
     }
-    
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUser({...user, [e.target.name]: e.target.value});
-        setIcone({...icone, [e.target.name]: true});
-    }
 
     useEffect(() => {
-        validar(user.password)
+        validate(user.password)
     }, [user.password])
 
     return(
@@ -66,16 +61,16 @@ export const InputPassword = () => {
                 name="password"
                 className="password_size"
                 onChange={((e: any) => handleChange(e))}
-                existeErro={existeErro}
+                errorExists={errorExists}
                 user={user.password}
             >
             </Input>
-            <PasswordIcon icone={icone.password}>
+            <PasswordIcon icons={icons.password}>
                 <FontAwesomeIcon icon="fa-regular fa-lock-keyhole" />
             </PasswordIcon>
-            <MensagemErro>
-                {tituloPagInicial === 'Login' ? erro : ''}
-            </MensagemErro>
+            <ErrorMessage>
+                {loginPageTitle === 'Login' ? error : ''}
+            </ErrorMessage>
         </Container>
     )
 }

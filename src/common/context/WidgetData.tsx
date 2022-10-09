@@ -1,22 +1,22 @@
-import { createContext, useState, useEffect } from 'react';
-import { PropsWidgetDataContext, WidgetDataContextProps } from '../../components/interfaces/WidgetData';
+import { createContext, useState } from 'react';
+import { PropsWidgetDateContext, WidgetDateContextProps } from '../../components/interfaces/WidgetDate';
 
-const valorInicial = {
-    dataHora: {
-        data: '',
-        hora: ''
-    }, setDataHora: () => {},
+const initialValue = {
+    dateTime: {
+        date: '',
+        time: ''
+    }, setDateTime: () => {},
 }
 
-export const WidgetDataContext = createContext<PropsWidgetDataContext>(valorInicial);
-WidgetDataContext.displayName = 'Widget de Data / Hora';
+export const WidgetDateContext = createContext<PropsWidgetDateContext>(initialValue);
+WidgetDateContext.displayName = 'Date/Time Widget';
 
-export const WidgetDataProvider = ({ children }: WidgetDataContextProps) => {
-    const [dataHora, setDataHora] = useState(valorInicial.dataHora);
+export const WidgetDataProvider = ({ children }: WidgetDateContextProps) => {
+    const [ dateTime, setDateTime ] = useState(initialValue.dateTime);
 
     return (
-        <WidgetDataContext.Provider value={{ dataHora, setDataHora }}>
+        <WidgetDateContext.Provider value={{ dateTime, setDateTime }}>
             {children}
-        </WidgetDataContext.Provider>
+        </WidgetDateContext.Provider>
     )
 }

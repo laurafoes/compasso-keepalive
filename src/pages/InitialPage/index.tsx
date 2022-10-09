@@ -1,10 +1,10 @@
 import logo from '../../assets/img/logo-light.svg';
-import { Container, FormContainer, Banner, FormTitle, Logo } from './LoginElements';
+import { Container, FormContainer, Banner, FormTitle, Logo } from './InitialPageElements';
 import { UserInfoProvider } from '../../common/context/UserInfo';
 import { PasswordProvider } from '../../common/context/Password';
 import { Outlet } from 'react-router-dom';
 
-export const PaginaInicial = () => {
+export const InitialPage = () => {
     return(
         <Container>
             <FormContainer>

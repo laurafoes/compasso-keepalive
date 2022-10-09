@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import compasso from '../../assets/img/bola-logoCompasso.svg';
-import { corPrincipal, fundoFooter, fundoHome } from '../../assets/styles/variables';
+import { footerBackground, homeBackground, mainColor } from '../../assets/styles/variables';
 
 export const Container = styled.div`
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: ${fundoHome};
+    background: ${homeBackground};
     @media screen and (max-width: 915px) and (orientation: landscape) {
         height: auto;
         overflow: visible;
@@ -109,7 +109,7 @@ export const Footer = styled.footer`
     height: 9.5%;
     display: flex;
     align-items: center;
-    background: ${fundoFooter};
+    background: ${footerBackground};
     @media screen and (max-width: 1024px) and (orientation: landscape) {
         height: 10%;
     }
@@ -131,13 +131,23 @@ export const Footer = styled.footer`
     }
 `
 
+export const GreetingsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+`
+
+export const User = styled.h6`
+    font-size: 38px;
+`
+
 export const Disclaimer = styled.p`
     width: 50%;
     text-align: right;
     display: flex;
     justify-content: flex-end;
     padding-right: 1vw;
-    border-right: 1px solid ${corPrincipal};
+    border-right: 1px solid ${mainColor};
     transition: 1000ms;
     p {
         width: 541px;

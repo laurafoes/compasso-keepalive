@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import logo_image from '../../assets/img/login-image.png';
-import { fundoLogin } from '../../assets/styles/variables';
+import { loginBackground } from '../../assets/styles/variables';
 
 export const Container = styled.div`
     height: 100vh;
     width: 100vw;
-    background: ${fundoLogin};
+    background: ${loginBackground};
     display: flex;
     align-items: center;
     @media screen and (max-width: 768px) {

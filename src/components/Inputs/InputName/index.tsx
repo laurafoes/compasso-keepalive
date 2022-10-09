@@ -4,13 +4,8 @@ import { UserInfoContext } from '../../../common/context/UserInfo';
 import { PropsUserContext } from '../../interfaces/UserInfo';
 import { Container, Input, UserIcon } from '../InputElements';
 
-export const InputNome = () => {
-    const { user, setUser, existeErro, icone, setIcone } = useContext<PropsUserContext>(UserInfoContext);
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setUser({...user, [e.target.name]: e.target.value});
-        setIcone({...icone, [e.target.name]: true});
-    }
+export const InputName = () => {
+    const { errorExists, icons, handleChange } = useContext<PropsUserContext>(UserInfoContext);
 
     return(
         <Container>
@@ -19,10 +14,10 @@ export const InputNome = () => {
                 placeholder="Nome"
                 name="nome"
                 onChange={((e: any) => handleChange(e))}
-                existeErro={existeErro}
+                errorExists={errorExists}
             >
             </Input>
-            <UserIcon icone={icone.email}>
+            <UserIcon icons={icons.email}>
                 <AiOutlineUser />
             </UserIcon>
         </Container>

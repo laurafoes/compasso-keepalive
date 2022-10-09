@@ -5,7 +5,7 @@ import { PropsUserContext } from '../../interfaces/UserInfo';
 import { Container, Input, UserIcon } from '../InputElements';
 
 export const InputUser = () => {
-    const { existeErro, icone, handleChange } = useContext<PropsUserContext>(UserInfoContext);
+    const { errorExists, icons, handleChange } = useContext<PropsUserContext>(UserInfoContext);
 
     return(
         <Container>
@@ -14,10 +14,10 @@ export const InputUser = () => {
                 placeholder="E-mail"
                 name="email"
                 onChange={((e: any) => handleChange(e))}
-                existeErro={existeErro}
+                errorExists={errorExists}
             >
             </Input>
-            <UserIcon icone={icone.email}>
+            <UserIcon icons={icons.email}>
                 <AiOutlineUser />
             </UserIcon>
         </Container>

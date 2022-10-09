@@ -2,7 +2,7 @@ import { createContext, useState } from 'react';
 import { PropsPasswordContext } from '../../components/interfaces/Password';
 import { UserContextProps } from '../../components/interfaces/UserInfo';
 
-const valorInicial = {
+const initialValue = {
     isMinSix: false,
     setIsMinSix: () => {},
     isUpper: false,
@@ -15,7 +15,7 @@ const valorInicial = {
     setIsSpecialChar: () => {}
 }
 
-export const passwordContext = createContext<PropsPasswordContext>(valorInicial);
+export const passwordContext = createContext<PropsPasswordContext>(initialValue);
 passwordContext.displayName = 'Password';
 
 export const PasswordProvider = ({ children }: UserContextProps) => {

@@ -1,51 +1,50 @@
 import { createContext, useState } from 'react';
 import { PropsUserContext, UserContextProps } from '../../components/interfaces/UserInfo';
 
-const valorInicial = {
+const initialValue = {
     user: {
         email: '',
         password: ''
     }, setUser: () => {},
-    existeErro: false,
-    setExisteErro: () => {},
-    erro: '',
-    setErro: () => {},
-    icone: {
+    errorExists: false,
+    setErrorExists: () => {},
+    error: '',
+    setError: () => {},
+    icons: {
         email: false,
         password: false,
     },
-    setIcone: () => {},
-    tituloPagInicial: 'Login',
-    setTituloPagInicial: () => {},
+    setIcons: () => {},
+    loginPageTitle: 'Login',
+    setLoginPageTitle: () => {},
     handleClick: () => {},
     handleChange: () => {}
 }
 
-export const UserInfoContext = createContext<PropsUserContext>(valorInicial);
+export const UserInfoContext = createContext<PropsUserContext>(initialValue);
 UserInfoContext.displayName = 'User Info';
 
 export const UserInfoProvider = ({ children }: UserContextProps) => {
-    const [ user , setUser ] = useState(valorInicial.user);
-    const [ existeErro, setExisteErro ] = useState(false);
-    const [ erro, setErro ] = useState(valorInicial.erro);
-    const [ icone, setIcone ] = useState(valorInicial.icone);
-    const [ tituloPagInicial, setTituloPagInicial ] = useState(valorInicial.tituloPagInicial);
-
+    const [ user , setUser ] = useState(initialValue.user);
+    const [ errorExists, setErrorExists ] = useState(false);
+    const [ error, setError ] = useState(initialValue.error);
+    const [ icons, setIcons ] = useState(initialValue.icons);
+    const [ loginPageTitle, setLoginPageTitle ] = useState(initialValue.loginPageTitle);
     const handleClick = (e: React.MouseEvent) => {
-        if(tituloPagInicial === 'Login') {
-            setTituloPagInicial('Cadastro');
+        if(loginPageTitle === 'Login') {
+            setLoginPageTitle('Cadastro');
         } else {
-            setTituloPagInicial('Login')
+            setLoginPageTitle('Login')
         }
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUser({...user, [e.target.name]: e.target.value});
-        setIcone({...icone, [e.target.name]: true});
+        setIcons({...icons, [e.target.name]: true});
     }
 
     return (
-        <UserInfoContext.Provider value={{ user, setUser, existeErro, setExisteErro, erro, setErro, icone, setIcone, tituloPagInicial, setTituloPagInicial, handleClick, handleChange }}>
+        <UserInfoContext.Provider value={{ user, setUser, errorExists, setErrorExists, error, setError, icons, setIcons, loginPageTitle, setLoginPageTitle, handleClick, handleChange }}>
             {children}
         </UserInfoContext.Provider>
     )

@@ -1,15 +1,15 @@
 import styled from 'styled-components';
-import { corDestaque } from '../../assets/styles/variables';
+import { highlightColor } from '../../assets/styles/variables';
 
 interface Props {
-    existeErro?: boolean
+    errorExists?: boolean
 }
 
-export const Botao = styled.button<Props>`
+export const NextButton = styled.button<Props>`
     font-size: 18px;
     font-weight: 700;
     height: 6.2vh;
-    background-color: ${corDestaque};
+    background-color: ${highlightColor};
     border-radius: 50px;
     border: none;
     width: 100%;

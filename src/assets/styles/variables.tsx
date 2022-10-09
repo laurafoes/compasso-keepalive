@@ -1,17 +1,17 @@
 //Textos
-export const corPrincipal = "#E0E0E0";
-export const corSecundaria = "#222222";
-export const corDestaque = "#C12D18";
-export const corErro = "#E9B425";
+export const mainColor = "#E0E0E0";
+export const secondaryColor = "#222222";
+export const highlightColor = "#C12D18";
+export const errorColor = "#E9B425";
 
 //Fundo
-export const fundoLogin = "linear-gradient(180deg, #33383D 0%, #1C1D20 100%)";
-export const fundoHome = "linear-gradient(105.96deg, #FFFFFF 0%, #F0F0F0 97.86%)";
-export const fundoFooter = "linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%)";
+export const loginBackground = "linear-gradient(180deg, #33383D 0%, #1C1D20 100%)";
+export const homeBackground = "linear-gradient(105.96deg, #FFFFFF 0%, #F0F0F0 97.86%)";
+export const footerBackground = "linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%)";
 
 //Botoes
-export const fundoBotaoPrincipal = " linear-gradient(90deg, #FF2D04 0%, #C13216 100%);"
+export const mainBtnBackground = " linear-gradient(90deg, #FF2D04 0%, #C13216 100%);"
 
 //Icones senha
-export const senhaInvalida = "#f84434";
-export const senhaValida = "#68bc6c";
+export const invalidPassword = "#f84434";
+export const validPassword = "#68bc6c";

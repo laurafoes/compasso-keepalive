@@ -1,6 +1,6 @@
 import { BsCheck, BsX } from 'react-icons/bs';
 import styled from 'styled-components';
-import { corErro, corPrincipal, corSecundaria, senhaInvalida, senhaValida } from '../../assets/styles/variables';
+import { invalidPassword, mainColor, validPassword } from '../../assets/styles/variables';
 
 export const Container = styled.div`
     background-color: rgba(224, 224, 224, 0.3);
@@ -10,8 +10,8 @@ export const Container = styled.div`
     border: none;
 `
 
-export const Titulo = styled.p`
-    color: ${corPrincipal};
+export const Title = styled.p`
+    color: ${mainColor};
     margin-bottom: 1rem;
 `
 export const Item = styled.p`
@@ -19,18 +19,18 @@ export const Item = styled.p`
     align-items: center;
 `
 //receber props para alerar a cor
-export const Valido = styled(BsCheck)`
-    fill: ${senhaValida};
+export const Valid = styled(BsCheck)`
+    fill: ${validPassword};
     font-size: 28px;
 `
 
-export const Erro = styled(BsX)`
-    fill: ${senhaInvalida};
+export const Invalid = styled(BsX)`
+    fill: ${invalidPassword};
     font-size: 28px;
 `
 
-export const Conteudo = styled.p`
+export const Content = styled.p`
     font-size: 16px;
-    color: ${corPrincipal};
+    color: ${mainColor};
     padding: 0.3rem 0;
 `

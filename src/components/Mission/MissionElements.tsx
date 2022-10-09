@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { corDestaque, corSecundaria } from '../../assets/styles/variables';
+import { highlightColor, secondaryColor } from '../../assets/styles/variables';
 
 export const Container = styled.div`
     display: flex;
@@ -31,8 +31,8 @@ export const Container = styled.div`
     }
 `
 
-export const Destaque = styled.h3`
-    color: ${corDestaque};
+export const Highlight = styled.h3`
+    color: ${highlightColor};
     font-weight: 700;
     font-size: 36px;
     line-height: 4.25vh;
@@ -56,8 +56,8 @@ export const Destaque = styled.h3`
     }
 `
 
-export const Traducao = styled.p`
-    color: ${corSecundaria};
+export const Translation = styled.p`
+    color: ${secondaryColor};
     font-size: 30px;
     line-height: 30px;
     @media (max-width: 1024px) {
@@ -82,8 +82,8 @@ export const Traducao = styled.p`
         line-height: 14px;
     }
 `
-export const DestaqueGrande = styled.h2`
-    color: ${corDestaque};
+export const LgHighlight = styled.h2`
+    color: ${highlightColor};
     font-weight: 700;
     font-size: 64px;
     line-height: 81px;

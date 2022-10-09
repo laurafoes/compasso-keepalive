@@ -13,14 +13,14 @@ export interface IIcone {
 export interface PropsUserContext {
     user: IUserInfo,
     setUser: (newState: IUserInfo) => void,
-    existeErro: boolean,
-    setExisteErro: (newState: boolean) => void,
-    erro: string,
-    setErro: (newState: string) => void,
-    icone: IIcone,
-    setIcone: (newState: IIcone) => void,
-    tituloPagInicial: string,
-    setTituloPagInicial: (newState: string) => void,
+    errorExists: boolean,
+    setErrorExists: (newState: boolean) => void,
+    error: string,
+    setError: (newState: string) => void,
+    icons: IIcone,
+    setIcons: (newState: IIcone) => void,
+    loginPageTitle: string,
+    setLoginPageTitle: (newState: string) => void,
     handleClick: (e: React.MouseEvent) => void,
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }

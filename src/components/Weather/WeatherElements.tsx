@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { TiWeatherPartlySunny } from 'react-icons/ti';
-import { corSecundaria } from '../../assets/styles/variables';
+import { secondaryColor } from '../../assets/styles/variables';
 
 export const Container = styled.div`
     display: flex;
@@ -14,13 +14,13 @@ export const Container = styled.div`
     }
 `
 
-export const Cidade = styled.p`
+export const City = styled.p`
     font-size: 14px;
     font-weight: 300;
-    color: ${corSecundaria};
+    color: ${secondaryColor};
 `
 
-export const ClimaWrapper = styled.div`
+export const WeatherWrapper = styled.div`
     display: flex;
     justify-content: center;
     @media screen and (max-width: 768px) {
@@ -31,8 +31,8 @@ export const ClimaWrapper = styled.div`
     }
 `
 
-export const Icone = styled(TiWeatherPartlySunny)`
-    fill: ${corSecundaria};
+export const Icon = styled(TiWeatherPartlySunny)`
+    fill: ${secondaryColor};
     margin-top: 0.4rem;
     margin-right: 0.5rem;
     font-size: 30px;
@@ -40,8 +40,8 @@ export const Icone = styled(TiWeatherPartlySunny)`
         font-size: 26px;
     }
 `
-export const Temperatura = styled.h5`
-    color: ${corSecundaria};
+export const Temperature = styled.h5`
+    color: ${secondaryColor};
     font-weight: 700;
     @media screen and (max-width: 768px) {
         font-size: 36px;

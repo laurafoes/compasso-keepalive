@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { corDestaque, corPrincipal } from '../../assets/styles/variables';
+import { highlightColor, mainColor } from '../../assets/styles/variables';
 
 interface Props {
     variant: boolean
@@ -14,7 +14,7 @@ export const Button = styled.button<Props>`
     box-sizing: border-box;
     border: none;
     cursor: pointer;
-    color: ${({variant}) => variant ? corDestaque : corPrincipal };
+    color: ${({variant}) => variant ? highlightColor : mainColor };
     background-color: ${({variant}) => variant ? "white" : "transparent"};
     @media screen and (max-width: 1024px) {
         margin-top: 0rem;

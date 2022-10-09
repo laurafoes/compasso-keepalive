@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from 'styled-normalize';
-import { corPrincipal } from "./variables";
+import { mainColor } from "./variables";
 
 export const GlobalStyle = createGlobalStyle`
     ${normalize}
@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     text-decoration: none;
-    color: ${corPrincipal};
+    color: ${mainColor};
     @media   (max-width: 480px) {
        font-size: 14px;
     }

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Body, Container, Disclaimer, Footer, FooterBtnWrapper, FooterNavigation, Header, Logo } from './HomeElements';
+import { Body, Container, Disclaimer, Footer, FooterBtnWrapper, FooterNavigation, GreetingsContainer, Header, Logo, User } from './HomeElements';
 import logo from '../../assets/img/logo-compasso-dark.svg';
-import { Missao } from '../../components/Missao';
+import { Mission } from '../../components/Mission';
 import { Timer } from '../../components/Timer';
 import { FooterBtn } from '../../components/FooterBtn';
-import { DisplayData } from '../../components/DisplayData';
-import { Clima } from '../../components/Clima';
+import { DisplayDate } from '../../components/DisplayDate';
+import { Weather } from '../../components/Weather';
 import { WidgetDataProvider } from '../../common/context/WidgetData';
 
 export const Home = () => {
@@ -14,14 +14,20 @@ export const Home = () => {
             <Header>
                 <Logo src={logo} alt="Logo da compass UOL"/>
                 <WidgetDataProvider>
-                    <DisplayData />
+                    <DisplayDate />
                 </WidgetDataProvider>
-                <Clima />
+                <Weather />
             </Header>
             <Body>
-                <Missao />
+                <Mission />
             </Body>
             <Footer>
+                <GreetingsContainer>
+                    Bem-vindo,
+                    <User>
+                        mano A
+                    </User>
+                </GreetingsContainer>
                 <Disclaimer>
                     <p>Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</p>
                 </Disclaimer>
