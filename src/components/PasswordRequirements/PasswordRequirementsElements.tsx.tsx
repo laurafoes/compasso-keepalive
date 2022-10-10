@@ -2,12 +2,18 @@ import { BsCheck, BsX } from 'react-icons/bs';
 import styled from 'styled-components';
 import { invalidPassword, mainColor, validPassword } from '../../assets/styles/variables';
 
-export const Container = styled.div`
+interface Props {
+    display?: string
+}
+
+export const Container = styled.div<Props>`
     background-color: rgba(224, 224, 224, 0.3);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 24px;;
     border: none;
+    transition: ease-in-out 400ms;
+    display: ${({display}) => display ? 'block' : 'none' };
 `
 
 export const Title = styled.p`

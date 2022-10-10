@@ -8,18 +8,14 @@ import { FooterBtn } from '../../components/FooterBtn';
 import { DisplayDate } from '../../components/DisplayDate';
 import { Weather } from '../../components/Weather';
 import { WidgetDataProvider } from '../../common/context/WidgetData';
+import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../servcies/FirebaseConfig';
 
 export const Home = () => {
-    const [ userDisplayName, setUserDisplayName ] = useState('');
-
-    useEffect(() => {
-        const userName = auth.currentUser?.displayName;
-        const fullUserName = userName?.split(' ');
-        if(fullUserName) {
-            setUserDisplayName(fullUserName[0]);
-        }
-    }, [])
+    const userStorage = JSON.parse(localStorage.getItem('user') || '{}');
+    const userName = userStorage.displayName;
+    const fullUserName = userName?.split(' ');
+    const name = fullUserName[0];
 
     return(
         <Container>
@@ -37,7 +33,7 @@ export const Home = () => {
                 <GreetingsContainer>
                     Bem-vindo,
                     <User>
-                        {userDisplayName}
+                        {name}
                     </User>
                 </GreetingsContainer>
                 <Disclaimer>

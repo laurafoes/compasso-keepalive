@@ -1,67 +1,75 @@
 import { UserInfoContext } from '../../common/context/UserInfo';
 import { PropsUserContext } from '../interfaces/UserInfo';
 import { NextButton } from './ButtonElements';
-import { useContext } from 'react';
-import { regexEmail } from '../../helpers/loginHelper';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../servcies/FirebaseConfig';
 import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword, useUpdateProfile } from "react-firebase-hooks/auth";
+import { browserSessionPersistence, createUserWithEmailAndPassword, onAuthStateChanged, setPersistence, signInWithEmailAndPassword } from 'firebase/auth';
 
 export const Button = () => {
     const { userInfo, setError, errorExists, setErrorExists, loginPageTitle } = useContext<PropsUserContext>(UserInfoContext);
+    const [updateProfile, updating, error] = useUpdateProfile(auth);
+    const [confirmPW, setConfirmPW] = useState(false);
+    const { registerPassword } = userInfo;
     const navigateTo = useNavigate();
-    const [ updateProfile, updating, error ] = useUpdateProfile(auth);
-    const { password } = userInfo;
     const { email } = userInfo;
-    
-    const validateLoginInputs = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
 
-        if (regexEmail.test(userInfo.email) && userInfo.password.length > 5) {
-            setError('');
-            setErrorExists(false);
-            handleSubmit(e);
+    async function login() {
+
+        setPersistence(auth, browserSessionPersistence)
+            .then(async () => {
+                try {
+                    const { password } = userInfo;
+                    const user = await signInWithEmailAndPassword(auth, email, password);
+                    console.log(user)
+                    setError('');
+                    setErrorExists(false);
+                    navigateTo('/home');
+                } catch (err) {
+                    setError('Ops, usuário ou senha inválidos. Tente novamente!');
+                    setErrorExists(true);
+                }
+            })
+    }
+
+    async function register() {
+        if (userInfo.password !== userInfo.confirmPassword) {
+            setConfirmPW(false)
+        }
+        setPersistence(auth, browserSessionPersistence)
+            .then(async () => {
+                try {
+                    const password = registerPassword;
+                    const user = await createUserWithEmailAndPassword(auth, email, password);
+                    console.log(user)
+                    updateProfile({
+                        displayName: userInfo.name
+                    })
+                    setError('');
+                    setErrorExists(false);
+                } catch (err) {
+                    setErrorExists(true)
+                }
+            })
+    }
+
+    const handleClick = () => {
+        if (loginPageTitle === 'Login') {
+            login();
         } else {
-            setError('Ops, usuário ou senha inválidos. Tente novamente!');
-            setErrorExists(true);
+            register();
         }
     }
 
-    const [signInWithEmailAndPassword] =
-    useSignInWithEmailAndPassword(auth);
+    onAuthStateChanged(auth, (currentUser) => {
+        //localStorage.setItem('user', JSON.stringify(currentUser));
+        localStorage.setItem('user', JSON.stringify(currentUser));
 
-    const [createUserWithEmailAndPassword] =
-    useCreateUserWithEmailAndPassword(auth);
-
-  function handleSignIn(e: any) {
-    e.preventDefault();
-    console.log(email, password)
-    
-    signInWithEmailAndPassword(email, password);
-    updateProfile({
-        displayName: userInfo.name
     })
 
-    navigateTo('/home');
-  }
-
-    function handleRegister(e: any) {
-        e.preventDefault();
-        createUserWithEmailAndPassword(email, password);
-        console.log('criou usuario!')
-    }
-
-    function handleSubmit (e: any) {
-        if(loginPageTitle === 'Cadastro') {
-            handleRegister(e)
-        } else {
-            handleSignIn(e);
-        }
-    }
-    
-
-    return(
-        <NextButton onClick={validateLoginInputs} errorExists={errorExists}>
+    return (
+        <NextButton onClick={handleClick} errorExists={errorExists}>
             Continuar
         </NextButton>
     )

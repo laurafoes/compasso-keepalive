@@ -5,13 +5,13 @@ import { Button } from '../Button';
 import { useContext, } from 'react';
 import { PropsUserContext } from '../interfaces/UserInfo';
 import { UserInfoContext } from '../../common/context/UserInfo';
-import { InputConfirmPassword } from '../Inputs/InputConfirmPassword/InputConfirmPassword';
+import { InputConfirmPassword } from '../Inputs/InputConfirmPassword';
 import { PasswordRequirements } from '../PasswordRequirements';
 import { LoginMessage } from '../LoginMessage';
 import { InputName } from '../Inputs/InputName';
 import { InputLoginPassword } from '../Inputs/InputLoginPassword/InputLoginPassword';
 export const LoginForm = () => {
-    const { icons, loginPageTitle } = useContext<PropsUserContext>(UserInfoContext);
+    const { loginPageTitle } = useContext<PropsUserContext>(UserInfoContext);
     const paginaDeLogin = loginPageTitle === 'Cadastro';
 
     return(
@@ -20,7 +20,7 @@ export const LoginForm = () => {
                 <Title>{loginPageTitle}</Title>
                 {paginaDeLogin ? <InputName /> : ''}
                 <InputUser />
-                {paginaDeLogin ? <InputLoginPassword /> : <InputRegisterPassword />}
+                {paginaDeLogin ? <InputRegisterPassword /> : <InputLoginPassword />}
                 {paginaDeLogin ? <InputConfirmPassword /> : ''}
                 {paginaDeLogin ? <PasswordRequirements /> : ''}
             </FormWrapper>

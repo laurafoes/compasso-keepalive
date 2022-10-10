@@ -4,7 +4,7 @@ import { auth } from '../../servcies/FirebaseConfig';
 import { Container, Mensagem, Contador, TimerWrapper } from "./TimerElements"
 
 export const Timer = () => {
-    const [ counter, setCounter ] = useState(6);
+    const [ counter, setCounter ] = useState(60);
     const navigateTo = useNavigate();
 
     const handleTimer = () => {

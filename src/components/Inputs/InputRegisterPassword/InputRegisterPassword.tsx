@@ -49,9 +49,9 @@ export const InputRegisterPassword = () => {
     }
 
     useEffect(() => {
-        validate(userInfo.password)
-        console.log(userInfo.password)
-    }, [userInfo.password])
+        validate(userInfo.registerPassword)
+        console.log(userInfo.registerPassword)
+    }, [userInfo.registerPassword])
 
     return(
         <Container>

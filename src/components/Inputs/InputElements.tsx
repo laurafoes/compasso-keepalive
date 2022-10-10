@@ -121,6 +121,7 @@ export const ErrorMessage = styled.p<Props>`
     color: ${errorColor};
     font-weight: 700;
     line-height: 20.28px;
+    margin-bottom: 2rem;
     @media screen and (max-width: 768px){
         font-size: 14px;
         line-height: 14px;
