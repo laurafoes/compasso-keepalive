@@ -134,11 +134,13 @@ export const Footer = styled.footer`
 export const GreetingsContainer = styled.div`
     display: flex;
     flex-direction: column;
+    margin-left: 2rem;
     justify-content: flex-start;
 `
 
 export const User = styled.h6`
-    font-size: 38px;
+    font-size: 32px;
+    font-weight: 600;
 `
 
 export const Disclaimer = styled.p`
