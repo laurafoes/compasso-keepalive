@@ -1,15 +1,26 @@
+import { useNavigate } from "react-router-dom"
+import { auth } from "../../servcies/FirebaseConfig"
 import { Button } from "./FooterBtnElements"
 
 interface Props {
     variant: boolean,
     children?: React.ReactNode,
-    onClick?: React.MouseEvent<HTMLButtonElement>
 }
 
 export const FooterBtn = ({ variant, children }: Props) => {
+    const navigateTo = useNavigate();
+    const handleLogout = () => {
+        if(variant) {
+            auth.signOut();
+            navigateTo('/');
+
+        }
+    }
+
     return(
         <Button
             variant={variant}
+            onClick={handleLogout}
         >
             {children}
         </Button>
