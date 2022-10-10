@@ -5,12 +5,7 @@ import { PropsUserContext } from '../../interfaces/UserInfo';
 import { Container, Input, UserIcon } from '../InputElements';
 
 export const InputUser = () => {
-    const { userInfo, setUserInfo, errorExists, icons, handleChange } = useContext<PropsUserContext>(UserInfoContext);
-
-
-    const handleEmail = (e: React.ChangeEvent<HTMLElement>) => {
-        setEmail((e.target as HTMLInputElement).value);
-    }
+    const { userInfo, errorExists, icons, handleChange } = useContext<PropsUserContext>(UserInfoContext);
 
     useEffect(() =>{
         console.log(userInfo);

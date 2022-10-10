@@ -17,7 +17,7 @@ export const InputName = () => {
                 errorExists={errorExists}
             >
             </Input>
-            <UserIcon icons={icons.email}>
+            <UserIcon icons={icons.name}>
                 <AiOutlineUser />
             </UserIcon>
         </Container>

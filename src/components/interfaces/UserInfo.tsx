@@ -4,12 +4,16 @@ export interface IUserInfo {
     name: string
     email: string,
     password: string,
-    confirmPassword: string
+    registerPassword: string,
+    confirmPassword: string,
 }
 
 export interface IIcone {
+    name: boolean,
     email: boolean,
-    password: boolean
+    password: boolean,
+    registerPassword: boolean,
+    confirmPassword: boolean
 }
 
 export interface PropsUserContext {

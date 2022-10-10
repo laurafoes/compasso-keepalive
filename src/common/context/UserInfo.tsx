@@ -6,15 +6,19 @@ const initialValue = {
         name: '',
         email: '',
         password: '',
-        confirmPassword: '',
+        registerPassword: '',
+        confirmPassword: ''
     }, setUserInfo: () => {},
     errorExists: false,
     setErrorExists: () => {},
     error: '',
     setError: () => {},
     icons: {
+        name: false,
         email: false,
         password: false,
+        registerPassword: false,
+        confirmPassword: false
     },
     setIcons: () => {},
     loginPageTitle: 'Login',

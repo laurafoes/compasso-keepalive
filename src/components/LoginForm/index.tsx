@@ -1,27 +1,28 @@
 import { InputUser } from '../../components/Inputs/InputUser/InputUser';
-import { InputPassword } from '../../components/Inputs/InputPassword/InputPassword';
+import { InputRegisterPassword } from '../Inputs/InputRegisterPassword/InputRegisterPassword';
 import { Form, FormWrapper, ButtonWrapper, Title } from './LoginFormElements';
 import { Button } from '../Button';
-import { useContext } from 'react';
+import { useContext, } from 'react';
 import { PropsUserContext } from '../interfaces/UserInfo';
 import { UserInfoContext } from '../../common/context/UserInfo';
-import { InputConfirmPassword } from '../Inputs/InputConfirmPassword';
+import { InputConfirmPassword } from '../Inputs/InputConfirmPassword/InputConfirmPassword';
 import { PasswordRequirements } from '../PasswordRequirements';
 import { LoginMessage } from '../LoginMessage';
 import { InputName } from '../Inputs/InputName';
-
+import { InputLoginPassword } from '../Inputs/InputLoginPassword/InputLoginPassword';
 export const LoginForm = () => {
-    const { loginPageTitle } = useContext<PropsUserContext>(UserInfoContext);
+    const { icons, loginPageTitle } = useContext<PropsUserContext>(UserInfoContext);
+    const paginaDeLogin = loginPageTitle === 'Cadastro';
 
     return(
         <Form>
             <FormWrapper>
                 <Title>{loginPageTitle}</Title>
-                {loginPageTitle === 'Cadastro' ? <InputName /> : ''}
+                {paginaDeLogin ? <InputName /> : ''}
                 <InputUser />
-                <InputPassword />
-                {loginPageTitle === 'Cadastro' ? <InputConfirmPassword /> : ''}
-                {loginPageTitle === 'Cadastro' ? <PasswordRequirements /> : ''}
+                {paginaDeLogin ? <InputLoginPassword /> : <InputRegisterPassword />}
+                {paginaDeLogin ? <InputConfirmPassword /> : ''}
+                {paginaDeLogin ? <PasswordRequirements /> : ''}
             </FormWrapper>
             <ButtonWrapper>
                 <Button />

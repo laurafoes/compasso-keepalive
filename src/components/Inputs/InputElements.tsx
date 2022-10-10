@@ -44,6 +44,17 @@ export const Input = styled.input<Props>`
         margin-bottom: 3%;
     }
 `
+export const PasswordInput = styled.input<Props>`
+    font-size: ${({user}) => user !== '' ? '16px' : '56px'};
+`
+
+export const RegisterPassWordInput = styled.input<Props>`
+    font-size: ${({user}) => user !== '' ? '16px' : '56px'};
+`
+
+export const ConfirmPassword = styled.input<Props>`
+    font-size: ${({user}) => user !== '' ? '16px' : '56px'};
+`
 
 export const UserIcon = styled(AiOutlineUser)<Props>`
     position: absolute;

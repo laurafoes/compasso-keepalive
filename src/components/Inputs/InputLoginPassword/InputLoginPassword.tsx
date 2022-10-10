@@ -6,8 +6,8 @@ import { Container, ErrorMessage, Input, PasswordIcon } from '../InputElements';
 import { passwordContext } from '../../../common/context/Password';
 import { PropsPasswordContext } from '../../interfaces/Password';
 
-export const InputPassword = () => {
-    const { userInfo, setUserInfo, error, errorExists, icons, loginPageTitle, handleChange } = useContext<PropsUserContext>(UserInfoContext);
+export const InputLoginPassword = () => {
+    const { userInfo, error, errorExists, icons, loginPageTitle, handleChange } = useContext<PropsUserContext>(UserInfoContext);
     const { setIsMinSix, setIsUpper, setIsLower, setIsNumber, setIsSpecialChar  } = useContext<PropsPasswordContext>(passwordContext);
 
     const validate = ( userPassword: string ) => {
@@ -59,12 +59,11 @@ export const InputPassword = () => {
                 type="password"
                 placeholder="Senha"
                 name="password"
-                className="password_size"
-                onChange={handleChange}
+                className="PasswordInput"
+                onChange={(e: any) => handleChange(e)}
                 errorExists={errorExists}
                 user={userInfo.password}
-            >
-            </Input>
+            />
             <PasswordIcon icons={icons.password}>
                 <FontAwesomeIcon icon="fa-regular fa-lock-keyhole" />
             </PasswordIcon>
