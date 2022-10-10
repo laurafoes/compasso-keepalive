@@ -5,14 +5,14 @@ import { PropsUserContext } from '../../interfaces/UserInfo';
 import { Container, Input, UserIcon } from '../InputElements';
 
 export const InputName = () => {
-    const { errorExists, icons, handleChange } = useContext<PropsUserContext>(UserInfoContext);
+    const { userInfo, errorExists, icons, handleChange } = useContext<PropsUserContext>(UserInfoContext);
 
     return(
         <Container>
             <Input
                 type="text"
                 placeholder="Nome"
-                name="nome"
+                name="name"
                 onChange={((e: any) => handleChange(e))}
                 errorExists={errorExists}
             >

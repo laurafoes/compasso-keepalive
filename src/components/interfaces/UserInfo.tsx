@@ -1,8 +1,10 @@
 import { ReactNode } from 'react';
 
 export interface IUserInfo {
+    name: string
     email: string,
-    password: string
+    password: string,
+    confirmPassword: string
 }
 
 export interface IIcone {
@@ -11,8 +13,8 @@ export interface IIcone {
 }
 
 export interface PropsUserContext {
-    user: IUserInfo,
-    setUser: (newState: IUserInfo) => void,
+    userInfo: IUserInfo,
+    setUserInfo: (newState: IUserInfo) => void,
     errorExists: boolean,
     setErrorExists: (newState: boolean) => void,
     error: string,
@@ -21,8 +23,8 @@ export interface PropsUserContext {
     setIcons: (newState: IIcone) => void,
     loginPageTitle: string,
     setLoginPageTitle: (newState: string) => void,
-    handleClick: (e: React.MouseEvent) => void,
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    getCurrentLocation: () => void,
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
 export interface UserContextProps {

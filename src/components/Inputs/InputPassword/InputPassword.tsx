@@ -7,10 +7,9 @@ import { passwordContext } from '../../../common/context/Password';
 import { PropsPasswordContext } from '../../interfaces/Password';
 
 export const InputPassword = () => {
-    const { user, setUser, error, errorExists, icons, loginPageTitle, handleChange } = useContext<PropsUserContext>(UserInfoContext);
-
+    const { userInfo, setUserInfo, error, errorExists, icons, loginPageTitle, handleChange } = useContext<PropsUserContext>(UserInfoContext);
     const { setIsMinSix, setIsUpper, setIsLower, setIsNumber, setIsSpecialChar  } = useContext<PropsPasswordContext>(passwordContext);
-    
+
     const validate = ( userPassword: string ) => {
         const checkLength = /^.{6,}$/;
         const checkUpper = /^.*[A-Z].*$/;
@@ -50,8 +49,9 @@ export const InputPassword = () => {
     }
 
     useEffect(() => {
-        validate(user.password)
-    }, [user.password])
+        validate(userInfo.password)
+        console.log(userInfo.password)
+    }, [userInfo.password])
 
     return(
         <Container>
@@ -60,9 +60,9 @@ export const InputPassword = () => {
                 placeholder="Senha"
                 name="password"
                 className="password_size"
-                onChange={((e: any) => handleChange(e))}
+                onChange={handleChange}
                 errorExists={errorExists}
-                user={user.password}
+                user={userInfo.password}
             >
             </Input>
             <PasswordIcon icons={icons.password}>
