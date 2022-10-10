@@ -10,8 +10,7 @@ export const Weather = () => {
     // const api = process.env.REACT_APP_API;
     async function getLocation(lat: number, long: number) {
         try {
-            axios.get(`https://api.hgbrasil.com/weather?format=json-cors&key=
-            ${import.meta.env.VITE_API_KEY}&lat=${lat}&lon=${long}&
+            axios.get(`https://api.hgbrasil.com/weather?format=json-cors&key=${import.meta.env.VITE_API_KEY}&lat=${lat}&lon=${long}&
             user_ip=remote`)
             .then(res => res.data)
             .then(res => {
