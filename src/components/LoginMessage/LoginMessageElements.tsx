@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import { errorColor } from "../../assets/styles/variables"
+import { linkColor } from "../../assets/styles/variables"
 
 export const Paragraph = styled.p`
     margin-top: 1rem;
@@ -8,5 +8,5 @@ export const Paragraph = styled.p`
 `
 
 export const ActiveLink = styled(Link)`
-    color: ${errorColor}
+    color: ${linkColor}
 `

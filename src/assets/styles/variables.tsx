@@ -3,6 +3,7 @@ export const mainColor = "#E0E0E0";
 export const secondaryColor = "#222222";
 export const highlightColor = "#C12D18";
 export const errorColor = "#E9B425";
+export const linkColor = "#30b4f4";
 
 //Fundo
 export const loginBackground = "linear-gradient(180deg, #33383D 0%, #1C1D20 100%)";
