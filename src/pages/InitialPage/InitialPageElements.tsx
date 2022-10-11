@@ -3,12 +3,16 @@ import logo_image from '../../assets/img/login-image.png';
 import { loginBackground } from '../../assets/styles/variables';
 
 export const Container = styled.div`
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background: ${loginBackground};
     display: flex;
     align-items: center;
+    @media screen and (max-width: 1440px) {
+        height: auto;
+    }
     @media screen and (max-width: 768px) {
+        height: auto;
         flex-direction: column-reverse;
         justify-content: flex-end;
     }
@@ -23,9 +27,13 @@ export const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media screen and (max-width: 1440px) {
+       
+    }
     @media screen and (max-width: 768px) {
         width: 100%;
         height: auto;
+        padding: 3rem 0;
         justify-content: space-evenly;
 }
 `
@@ -60,10 +68,15 @@ export const FormTitle = styled.div `
 
 export const Banner = styled.div `
     width: 50%;
-    height: 100vh;
+    height: auto;
+    /* min-height: 100vh; */
     background-image: url(${logo_image});
+    background-position: right top;
     background-size: cover;
     text-align: center;
+    @media screen and (max-width: 1440px) {
+
+    }
     @media screen and (max-width: 768px) {
         width: 100%;
         height: 15%;

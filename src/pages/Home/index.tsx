@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Body, Container, Disclaimer, Footer, FooterBtnWrapper, FooterNavigation, GreetingsContainer, Header, Logo, User } from './HomeElements';
 import logo from '../../assets/img/logo-compasso-dark.svg';
@@ -8,8 +7,6 @@ import { FooterBtn } from '../../components/FooterBtn';
 import { DisplayDate } from '../../components/DisplayDate';
 import { Weather } from '../../components/Weather';
 import { WidgetDataProvider } from '../../common/context/WidgetData';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../../servcies/FirebaseConfig';
 
 export const Home = () => {
     const userStorage = JSON.parse(localStorage.getItem('user') || '{}');

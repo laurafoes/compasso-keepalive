@@ -48,7 +48,6 @@ export const Button = () => {
                         setTimeout(() => {
                         navigateTo('/')
                         }, 3000)
-                        setRegistered(false);
                     } catch (err) {
                     }
                 })

@@ -24,9 +24,11 @@ export const Container = styled.div`
         justify-content: flex-start;
     }
     @media screen and (max-width: 480px) {
-        height: 20vh;
+        height: 11vh;
+        margin-bottom: 1.5rem;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
 
     }
 `

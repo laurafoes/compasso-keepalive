@@ -92,7 +92,7 @@ export const Body = styled.main`
     }
     @media screen and (max-width: 768px) {
         background-image: none;
-        height: 60%;
+        height: 50%;
     }
     @media screen and (max-width: 768px) and (orientation: landscape) {
         height: 75vh;
@@ -117,7 +117,7 @@ export const Footer = styled.footer`
         height: auto;
     }
     @media screen and (max-width: 768px) {
-        height: 16%;
+        height: 25%;
         flex-direction: column-reverse;
         justify-content: space-between;
     }
@@ -136,11 +136,32 @@ export const GreetingsContainer = styled.div`
     flex-direction: column;
     margin-left: 2rem;
     justify-content: flex-start;
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+        margin: 0;
+        flex-direction: row;
+        padding: 1rem 0;
+        width: 100%;
+        order: 1;
+        justify-content: center;
+        align-items: center;
+    }
+    @media screen and (max-width: 480px) {
+        padding-top: 1.5rem;
+    }
 `
 
 export const User = styled.h6`
     font-size: 32px;
     font-weight: 600;
+    @media screen and (max-width: 768px) {
+        font-size: 28px;
+        margin-bottom: 0.25rem;
+        margin-left: 0.5rem;;
+    }
+    @media screen and (max-width: 468px) {
+        font-size: 24px;
+    }
 `
 
 export const Disclaimer = styled.p`
@@ -157,6 +178,10 @@ export const Disclaimer = styled.p`
         padding: 0.5rem;
         @media screen and (max-width: 1024px) {
             font-size: 12px;
+            width: 350px;
+        }
+        @media screen and (max-width: 768px) {
+            width: 100%;
         }
     }
     @media screen and (max-width: 1024px) {
