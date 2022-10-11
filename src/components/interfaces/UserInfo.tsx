@@ -27,6 +27,8 @@ export interface PropsUserContext {
     setIcons: (newState: IIcone) => void,
     registered: boolean,
     setRegistered: (newState: boolean) => void,
+    logged: boolean,
+    setLogged: (newState: boolean) => void,
     loginPageTitle: string,
     setLoginPageTitle: (newState: string) => void,
     getCurrentLocation: () => void,

@@ -28,7 +28,7 @@ export const FormContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     @media screen and (max-width: 1440px) {
-       
+       padding: 4rem 0;
     }
     @media screen and (max-width: 768px) {
         width: 100%;
@@ -68,7 +68,7 @@ export const FormTitle = styled.div `
 
 export const Banner = styled.div `
     width: 50%;
-    height: auto;
+    align-self: stretch;
     /* min-height: 100vh; */
     background-image: url(${logo_image});
     background-position: right top;
@@ -82,7 +82,7 @@ export const Banner = styled.div `
         height: 15%;
     }
     @media screen and (max-width: 915px) and (orientation: landscape) {
-        height: 100vh;
+        height: auto;
     }
 `
 

@@ -7,8 +7,19 @@ import { PropsUserContext } from '../interfaces/UserInfo';
 import { Container, Content, Invalid, Item, Title, Valid } from './PasswordRequirementsElements.tsx'
 
 export const PasswordRequirements = () => {
-    const { isMinSix, isUpper, isLower, isNumber, isSpecialChar, passwordsMatch, setPasswordsMatch  } = useContext<PropsPasswordContext>(passwordContext);
-    const { userInfo, registered } = useContext<PropsUserContext>(UserInfoContext);
+    const { 
+            isMinSix, 
+            isUpper, 
+            isLower, 
+            isNumber, 
+            isSpecialChar, 
+            passwordsMatch, 
+            setPasswordsMatch  
+        } = useContext<PropsPasswordContext>(passwordContext);
+    const { 
+            userInfo, 
+            registered 
+        } = useContext<PropsUserContext>(UserInfoContext);
     const { registerPassword } = userInfo;
 
     if(userInfo.registerPassword !== userInfo.confirmPassword) {
@@ -16,8 +27,8 @@ export const PasswordRequirements = () => {
     } else {setPasswordsMatch(true)}
     
     return (
-        <Container display={registerPassword}>
-            { registered ? <Content><Valid><BsCheck /></Valid> <p>Usuário cadastrado com sucesso.</p><p>Você será redirecionado em instantes.</p></Content> :
+        <Container display={registerPassword} registered={registered}>
+            { registered ? <Content>Usuário cadastrado com sucesso. Aguarde o redirecionamento.</Content> :
             <>
             <Title>
                 A senha deverá conter ao menos:

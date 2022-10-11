@@ -5,11 +5,12 @@ import { PropsUserContext } from '../../interfaces/UserInfo';
 import { Container, Input, UserIcon } from '../InputElements';
 
 export const InputUser = () => {
-    const { userInfo, errorExists, icons, handleChange } = useContext<PropsUserContext>(UserInfoContext);
-
-    useEffect(() =>{
-        console.log(userInfo);
-    }, [userInfo])
+    const { 
+            userInfo,
+            errorExists, 
+            icons, 
+            handleChange 
+        } = useContext<PropsUserContext>(UserInfoContext);
     
     return(
         <Container>

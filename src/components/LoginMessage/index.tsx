@@ -11,8 +11,8 @@ export const LoginMessage = () => {
 
     useEffect(() => {
         getCurrentLocation();
-        console.log(location)
     }, [location])
+    
     return (
         <>
             {loginPageTitle === 'Login' ?

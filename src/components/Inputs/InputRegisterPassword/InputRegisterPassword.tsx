@@ -2,13 +2,24 @@ import { useEffect, useContext } from 'react';
 import { UserInfoContext } from '../../../common/context/UserInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { PropsUserContext } from '../../interfaces/UserInfo';
-import { Container, ErrorMessage, Input, PasswordIcon } from '../InputElements';
+import { Container, Input, PasswordIcon } from '../InputElements';
 import { passwordContext } from '../../../common/context/Password';
 import { PropsPasswordContext } from '../../interfaces/Password';
 
 export const InputRegisterPassword = () => {
-    const { userInfo, error, errorExists, icons, loginPageTitle, handleChange } = useContext<PropsUserContext>(UserInfoContext);
-    const { setIsMinSix, setIsUpper, setIsLower, setIsNumber, setIsSpecialChar  } = useContext<PropsPasswordContext>(passwordContext);
+    const { 
+            userInfo,
+            errorExists, 
+            icons, 
+            handleChange 
+        } = useContext<PropsUserContext>(UserInfoContext);
+    const {
+            setIsMinSix,
+            setIsUpper, 
+            setIsLower, 
+            setIsNumber, 
+            setIsSpecialChar 
+        } = useContext<PropsPasswordContext>(passwordContext);
 
     const validate = ( userPassword: string ) => {
         const checkLength = /^.{6,}$/;
@@ -50,7 +61,6 @@ export const InputRegisterPassword = () => {
 
     useEffect(() => {
         validate(userInfo.registerPassword)
-        console.log(userInfo.registerPassword)
     }, [userInfo.registerPassword])
 
     return(
@@ -68,9 +78,6 @@ export const InputRegisterPassword = () => {
             <PasswordIcon icons={icons.registerPassword}>
                 <FontAwesomeIcon icon="fa-regular fa-lock-keyhole" />
             </PasswordIcon>
-            <ErrorMessage>
-                {loginPageTitle === 'Login' ? error : ''}
-            </ErrorMessage>
         </Container>
     )
 }

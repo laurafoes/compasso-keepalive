@@ -10,6 +10,7 @@ import { PasswordRequirements } from '../PasswordRequirements';
 import { LoginMessage } from '../LoginMessage';
 import { InputName } from '../Inputs/InputName';
 import { InputLoginPassword } from '../Inputs/InputLoginPassword/InputLoginPassword';
+
 export const LoginForm = () => {
     const { loginPageTitle, setRegistered } = useContext<PropsUserContext>(UserInfoContext);
     const paginaDeLogin = loginPageTitle === 'Cadastro';

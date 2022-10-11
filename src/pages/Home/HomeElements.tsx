@@ -134,8 +134,15 @@ export const Footer = styled.footer`
 export const GreetingsContainer = styled.div`
     display: flex;
     flex-direction: column;
+    width: 5%;
     margin-left: 2rem;
     justify-content: flex-start;
+    @media screen and (max-width: 1440px) {
+        width: 7%;
+    }
+    @media screen and (max-width: 1280px) {
+        width: 10%;
+    }
     @media screen and (max-width: 768px) {
         font-size: 14px;
         margin: 0;
@@ -206,7 +213,7 @@ export const Disclaimer = styled.p`
 
 export const FooterNavigation = styled.div`
     width: 50%;
-    height: auto;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     transition: 1000ms;

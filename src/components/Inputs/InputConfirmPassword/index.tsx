@@ -5,7 +5,12 @@ import { PropsUserContext } from '../../interfaces/UserInfo';
 import { Container, ErrorMessage, Input, PasswordIcon } from '../InputElements';
 
 export const InputConfirmPassword = () => {
-    const { userInfo, error, errorExists, icons, handleChange } = useContext<PropsUserContext>(UserInfoContext);
+    const { userInfo,
+        error,
+        errorExists,
+        icons,
+        handleChange
+    } = useContext<PropsUserContext>(UserInfoContext);
 
     return(
         <Container>

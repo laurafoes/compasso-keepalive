@@ -8,8 +8,22 @@ import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword, useUp
 import { browserSessionPersistence, createUserWithEmailAndPassword, onAuthStateChanged, setPersistence, signInWithEmailAndPassword } from 'firebase/auth';
 
 export const Button = () => {
-    const { userInfo, setError, errorExists, setErrorExists, loginPageTitle, setRegistered } = useContext<PropsUserContext>(UserInfoContext);
-    const [updateProfile, updating, error] = useUpdateProfile(auth);
+    const { 
+        userInfo,
+        setError,
+        errorExists,
+        setErrorExists,
+        icons,
+        setIcons,
+        loginPageTitle,
+        setRegistered,
+        setLogged
+    } = useContext<PropsUserContext>(UserInfoContext);
+    const [ 
+        updateProfile,
+        updating,
+        error
+    ] = useUpdateProfile(auth);
     const { registerPassword } = userInfo;
     const navigateTo = useNavigate();
     const { email } = userInfo;
@@ -20,11 +34,14 @@ export const Button = () => {
             .then(async () => {
                 try {
                     const { password } = userInfo;
-                    const user = await signInWithEmailAndPassword(auth, email, password);
-                    console.log(user)
+                    await signInWithEmailAndPassword(auth, email, password);
+                    setLogged(true);
                     setError('');
                     setErrorExists(false);
-                    navigateTo('/home');
+                    setIcons({...icons, email: false})
+                    setTimeout(() => {
+                        navigateTo('/home')
+                        }, 3000)
                 } catch (err) {
                     setError('Ops, usuário ou senha inválidos. Tente novamente!');
                     setErrorExists(true);
@@ -37,8 +54,7 @@ export const Button = () => {
                 .then(async () => {
                     try {
                         const password = registerPassword;
-                        const user = await createUserWithEmailAndPassword(auth, email, password);
-                        console.log(user)
+                        await createUserWithEmailAndPassword(auth, email, password);
                         updateProfile({
                             displayName: userInfo.name
                         })
@@ -49,6 +65,7 @@ export const Button = () => {
                         navigateTo('/')
                         }, 3000)
                     } catch (err) {
+                        setErrorExists(true);
                     }
                 })
     }
@@ -62,9 +79,7 @@ export const Button = () => {
     }
 
     onAuthStateChanged(auth, (currentUser) => {
-        //localStorage.setItem('user', JSON.stringify(currentUser));
         localStorage.setItem('user', JSON.stringify(currentUser));
-
     })
 
     return (

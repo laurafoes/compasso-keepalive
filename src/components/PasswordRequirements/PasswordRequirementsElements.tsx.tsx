@@ -3,16 +3,20 @@ import styled from 'styled-components';
 import { invalidPassword, mainColor, validPassword } from '../../assets/styles/variables';
 
 interface Props {
-    display?: string
+    display?: string,
+    registered?: boolean
 }
 
 export const Container = styled.div<Props>`
-    background-color: rgba(224, 224, 224, 0.3);
+    background-color: ${({registered}) => registered ? 'transparent' : 'rgba(224, 224, 224, 0.3)' };
     padding: 1.5rem;
     border-radius: 24px;;
     border: none;
     transition: ease-in-out 400ms;
     display: ${({display}) => display ? 'block' : 'none' };
+    @media screen and (max-width: 768px) {
+        margin-bottom: 1rem;
+    }
 `
 
 export const Title = styled.p`
@@ -34,7 +38,11 @@ export const Invalid = styled(BsX)`
     font-size: 28px;
 `
 
-export const Content = styled.p`
+export const Content = styled.p<Props>`
     font-size: 16px;
-    color: ${mainColor};
+    color: ${({registered}) => registered ? mainColor : validPassword };
+    text-align: ${({registered}) => registered ? 'none' : 'center' };
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+    }
 `

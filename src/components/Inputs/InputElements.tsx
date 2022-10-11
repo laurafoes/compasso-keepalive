@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { AiOutlineUser } from 'react-icons/ai';
 import { TiLockClosedOutline } from 'react-icons/ti';
-import { errorColor } from '../../assets/styles/variables';
+import { errorColor, validPassword } from '../../assets/styles/variables';
 
 interface Props {
     errorExists?: boolean,
@@ -126,4 +126,9 @@ export const ErrorMessage = styled.p<Props>`
         font-size: 14px;
         line-height: 14px;
     }
+`
+
+export const SuccessMessage = styled.p<Props>`
+    color: ${validPassword};
+    text-align: center;
 `

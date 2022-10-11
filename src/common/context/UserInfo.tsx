@@ -23,6 +23,8 @@ const initialValue = {
     setIcons: () => {},
     registered: false,
     setRegistered: () => {},
+    logged: false,
+    setLogged: () => {},
     loginPageTitle: 'Login',
     setLoginPageTitle: () => {},
     getCurrentLocation: () => {},
@@ -38,6 +40,7 @@ export const UserInfoProvider = ({ children }: UserContextProps) => {
     const [ error, setError ] = useState(initialValue.error);
     const [ icons, setIcons ] = useState(initialValue.icons);
     const [ registered, setRegistered ] = useState(initialValue.registered);
+    const [ logged, setLogged ] = useState(initialValue.logged);
     const [ loginPageTitle, setLoginPageTitle ] = useState(initialValue.loginPageTitle);
 
     const getCurrentLocation = () => {
@@ -54,7 +57,24 @@ export const UserInfoProvider = ({ children }: UserContextProps) => {
     }
 
     return (
-        <UserInfoContext.Provider value={{ userInfo, setUserInfo, errorExists, setErrorExists, error, setError, icons, setIcons, registered, setRegistered, loginPageTitle, setLoginPageTitle, getCurrentLocation, handleChange }}>
+        <UserInfoContext.Provider value={{ 
+            userInfo,
+            setUserInfo,
+            errorExists,
+            setErrorExists,
+            error,
+            setError,
+            icons,
+            setIcons,
+            registered,
+            setRegistered,
+            logged,
+            setLogged,
+            loginPageTitle,
+            setLoginPageTitle,
+            getCurrentLocation,
+            handleChange 
+        }}>
             {children}
         </UserInfoContext.Provider>
     )
