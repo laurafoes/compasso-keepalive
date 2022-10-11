@@ -37,7 +37,7 @@ export const FormTitle = styled.div `
     width: 70%;
     max-width: 379px;
     margin: 0 auto;
-    margin-bottom: 10%;
+    margin-bottom: 12%;
     h1{ 
         line-height: 1px;
     }

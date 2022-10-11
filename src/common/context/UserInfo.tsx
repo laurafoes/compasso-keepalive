@@ -21,6 +21,8 @@ const initialValue = {
         confirmPassword: false
     },
     setIcons: () => {},
+    registered: false,
+    setRegistered: () => {},
     loginPageTitle: 'Login',
     setLoginPageTitle: () => {},
     getCurrentLocation: () => {},
@@ -35,6 +37,7 @@ export const UserInfoProvider = ({ children }: UserContextProps) => {
     const [ errorExists, setErrorExists ] = useState(false);
     const [ error, setError ] = useState(initialValue.error);
     const [ icons, setIcons ] = useState(initialValue.icons);
+    const [ registered, setRegistered ] = useState(initialValue.registered);
     const [ loginPageTitle, setLoginPageTitle ] = useState(initialValue.loginPageTitle);
 
     const getCurrentLocation = () => {
@@ -51,7 +54,7 @@ export const UserInfoProvider = ({ children }: UserContextProps) => {
     }
 
     return (
-        <UserInfoContext.Provider value={{ userInfo, setUserInfo, errorExists, setErrorExists, error, setError, icons, setIcons, loginPageTitle, setLoginPageTitle, getCurrentLocation, handleChange }}>
+        <UserInfoContext.Provider value={{ userInfo, setUserInfo, errorExists, setErrorExists, error, setError, icons, setIcons, registered, setRegistered, loginPageTitle, setLoginPageTitle, getCurrentLocation, handleChange }}>
             {children}
         </UserInfoContext.Provider>
     )

@@ -8,9 +8,8 @@ import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword, useUp
 import { browserSessionPersistence, createUserWithEmailAndPassword, onAuthStateChanged, setPersistence, signInWithEmailAndPassword } from 'firebase/auth';
 
 export const Button = () => {
-    const { userInfo, setError, errorExists, setErrorExists, loginPageTitle } = useContext<PropsUserContext>(UserInfoContext);
+    const { userInfo, setError, errorExists, setErrorExists, loginPageTitle, setRegistered } = useContext<PropsUserContext>(UserInfoContext);
     const [updateProfile, updating, error] = useUpdateProfile(auth);
-    const [confirmPW, setConfirmPW] = useState(false);
     const { registerPassword } = userInfo;
     const navigateTo = useNavigate();
     const { email } = userInfo;
@@ -34,24 +33,25 @@ export const Button = () => {
     }
 
     async function register() {
-        if (userInfo.password !== userInfo.confirmPassword) {
-            setConfirmPW(false)
-        }
-        setPersistence(auth, browserSessionPersistence)
-            .then(async () => {
-                try {
-                    const password = registerPassword;
-                    const user = await createUserWithEmailAndPassword(auth, email, password);
-                    console.log(user)
-                    updateProfile({
-                        displayName: userInfo.name
-                    })
-                    setError('');
-                    setErrorExists(false);
-                } catch (err) {
-                    setErrorExists(true)
-                }
-            })
+            setPersistence(auth, browserSessionPersistence)
+                .then(async () => {
+                    try {
+                        const password = registerPassword;
+                        const user = await createUserWithEmailAndPassword(auth, email, password);
+                        console.log(user)
+                        updateProfile({
+                            displayName: userInfo.name
+                        })
+                        setError('');
+                        setErrorExists(false);
+                        setRegistered(true);
+                        setTimeout(() => {
+                        navigateTo('/')
+                        }, 3000)
+                        setRegistered(false);
+                    } catch (err) {
+                    }
+                })
     }
 
     const handleClick = () => {

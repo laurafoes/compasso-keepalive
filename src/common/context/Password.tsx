@@ -12,21 +12,24 @@ const initialValue = {
     isNumber: false,
     setIsNumber: () => {},
     isSpecialChar: false,
-    setIsSpecialChar: () => {}
+    setIsSpecialChar: () => {},
+    passwordsMatch: false,
+    setPasswordsMatch: () => {}
 }
 
 export const passwordContext = createContext<PropsPasswordContext>(initialValue);
 passwordContext.displayName = 'Password';
 
 export const PasswordProvider = ({ children }: UserContextProps) => {
-    const [ isMinSix, setIsMinSix ] = useState(false);
-    const [ isUpper, setIsUpper ] = useState(false);
-    const [ isLower, setIsLower ] = useState(false);
-    const [ isNumber, setIsNumber ] = useState(false);
-    const [ isSpecialChar, setIsSpecialChar ] = useState(false);
+    const [ isMinSix, setIsMinSix ] = useState(initialValue.isMinSix);
+    const [ isUpper, setIsUpper ] = useState(initialValue.isUpper);
+    const [ isLower, setIsLower ] = useState(initialValue.isLower);
+    const [ isNumber, setIsNumber ] = useState(initialValue.isNumber);
+    const [ isSpecialChar, setIsSpecialChar ] = useState(initialValue.isSpecialChar);
+    const [ passwordsMatch, setPasswordsMatch ] = useState(initialValue.passwordsMatch);
 
     return (
-        <passwordContext.Provider value={{ isMinSix, setIsMinSix, isUpper, setIsUpper, isLower, setIsLower, isNumber, setIsNumber, isSpecialChar, setIsSpecialChar }}>
+        <passwordContext.Provider value={{ isMinSix, setIsMinSix, isUpper, setIsUpper, isLower, setIsLower, isNumber, setIsNumber, isSpecialChar, setIsSpecialChar, passwordsMatch, setPasswordsMatch }}>
             {children}
         </passwordContext.Provider>
     )

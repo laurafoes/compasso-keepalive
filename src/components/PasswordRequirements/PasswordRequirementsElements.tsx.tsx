@@ -9,7 +9,6 @@ interface Props {
 export const Container = styled.div<Props>`
     background-color: rgba(224, 224, 224, 0.3);
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
     border-radius: 24px;;
     border: none;
     transition: ease-in-out 400ms;
@@ -18,9 +17,9 @@ export const Container = styled.div<Props>`
 
 export const Title = styled.p`
     color: ${mainColor};
-    margin-bottom: 1rem;
+    line-height: 20px;
 `
-export const Item = styled.p`
+export const Item = styled.div`
     display: flex;
     align-items: center;
 `
@@ -38,5 +37,4 @@ export const Invalid = styled(BsX)`
 export const Content = styled.p`
     font-size: 16px;
     color: ${mainColor};
-    padding: 0.3rem 0;
 `

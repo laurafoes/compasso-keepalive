@@ -12,6 +12,7 @@ export const NextButton = styled.button<Props>`
     background-color: ${highlightColor};
     border-radius: 50px;
     border: none;
+    margin-top: 10%;
     width: 100%;
     text-align: center;
     box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);

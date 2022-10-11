@@ -11,8 +11,12 @@ import { LoginMessage } from '../LoginMessage';
 import { InputName } from '../Inputs/InputName';
 import { InputLoginPassword } from '../Inputs/InputLoginPassword/InputLoginPassword';
 export const LoginForm = () => {
-    const { loginPageTitle } = useContext<PropsUserContext>(UserInfoContext);
+    const { loginPageTitle, setRegistered } = useContext<PropsUserContext>(UserInfoContext);
     const paginaDeLogin = loginPageTitle === 'Cadastro';
+
+    if(!loginPageTitle) {
+        setRegistered(true);
+    }
 
     return(
         <Form>

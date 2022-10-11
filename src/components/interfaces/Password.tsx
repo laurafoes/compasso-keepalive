@@ -10,7 +10,9 @@ export interface PropsPasswordContext {
     isNumber: boolean,
     setIsNumber: (newState: boolean) => void,
     isSpecialChar: boolean,
-    setIsSpecialChar: (newState: boolean) => void
+    setIsSpecialChar: (newState: boolean) => void,
+    passwordsMatch: boolean,
+    setPasswordsMatch: (newState: boolean) => void
 }
 
 export interface PasswordContextProps {

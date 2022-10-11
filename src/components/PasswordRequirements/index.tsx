@@ -7,12 +7,18 @@ import { PropsUserContext } from '../interfaces/UserInfo';
 import { Container, Content, Invalid, Item, Title, Valid } from './PasswordRequirementsElements.tsx'
 
 export const PasswordRequirements = () => {
-    const { isMinSix, isUpper, isLower, isNumber, isSpecialChar  } = useContext<PropsPasswordContext>(passwordContext);
-    const { userInfo } = useContext<PropsUserContext>(UserInfoContext);
+    const { isMinSix, isUpper, isLower, isNumber, isSpecialChar, passwordsMatch, setPasswordsMatch  } = useContext<PropsPasswordContext>(passwordContext);
+    const { userInfo, registered } = useContext<PropsUserContext>(UserInfoContext);
     const { registerPassword } = userInfo;
 
+    if(userInfo.registerPassword !== userInfo.confirmPassword) {
+        setPasswordsMatch(false)
+    } else {setPasswordsMatch(true)}
+    
     return (
         <Container display={registerPassword}>
+            { registered ? <Content><Valid><BsCheck /></Valid> <p>Usuário cadastrado com sucesso.</p><p>Você será redirecionado em instantes.</p></Content> :
+            <>
             <Title>
                 A senha deverá conter ao menos:
             </Title>
@@ -61,6 +67,17 @@ export const PasswordRequirements = () => {
                     um caractere especial
                 </Content>
             </Item>
+            <Item>
+                {passwordsMatch ?
+                    <Valid><BsCheck /></Valid> :
+                    <Invalid><BsX /></Invalid>
+                }
+                <Content>
+                    as senhas correspondem
+                </Content>
+            </Item>
+            </>
+            }
         </Container>
     )
 }
