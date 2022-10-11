@@ -38,7 +38,8 @@ export const Button = () => {
                     setLogged(true);
                     setError('');
                     setErrorExists(false);
-                    setIcons({...icons, email: false})
+                    // setIcons({...icons, email: false})
+                    // setIcons({...icons, password: false})
                     setTimeout(() => {
                         navigateTo('/home')
                         }, 3000)

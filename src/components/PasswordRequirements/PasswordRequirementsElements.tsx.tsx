@@ -40,7 +40,7 @@ export const Invalid = styled(BsX)`
 
 export const Content = styled.p<Props>`
     font-size: 16px;
-    color: ${({registered}) => registered ? mainColor : validPassword };
+    color: ${mainColor};
     text-align: ${({registered}) => registered ? 'none' : 'center' };
     @media screen and (max-width: 768px) {
         font-size: 14px;
