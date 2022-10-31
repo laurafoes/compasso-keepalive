@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Compasso from '../../assets/img/bola-logoCompasso.png';
+import Compasso from '../../assets/img/bola-logoCompasso.svg';
 import { footerBackground, homeBackground, mainColor } from '../../assets/styles/variables';
 
 export const Container = styled.div`
@@ -68,9 +68,9 @@ export const Body = styled.main`
     justify-content: flex-end;
     padding-right: 7%;
     background-image: url(${Compasso});
-    background-size: 35.96vw 76.3vh;
+    background-size: 42.96vw 76.3vh;
     background-position-y: 5.5vh;
-    background-position-x: -5.1vw;
+    background-position-x: -6.1vw;
     background-repeat: no-repeat;
     transition: ease 1000ms;
     @media screen and (max-width: 1440px) {
