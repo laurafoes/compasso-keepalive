@@ -74,8 +74,8 @@ export const Body = styled.main`
     background-repeat: no-repeat;
     transition: ease 1000ms;
     @media screen and (max-width: 1440px) {
-        background-size: 27vw 48.5vh;
-        background-position-y: 30vh;
+        background-size: 47vw 68.5vh;
+        background-position-y: 15vh;
         background-position-x: -6.1vw;
     }
     @media screen and (max-width: 1024px) {

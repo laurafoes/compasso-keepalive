@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineUser, AiOutlineUnlock } from 'react-icons/ai';
 import { TiLockClosedOutline } from 'react-icons/ti';
 import { errorColor, validPassword } from '../../assets/styles/variables';
 
@@ -65,6 +65,9 @@ export const UserIcon = styled(AiOutlineUser)<Props>`
     @media screen and (max-width: 1440px){
         top: 0.6rem;
     }
+    @media screen and (max-width: 1366px) {
+        top: 0.45rem;
+    }
     @media screen and (max-width: 1024px){
         right: ${({icons}) => icons ? "4%" : "-9%" };
         top: 0.5rem;
@@ -86,15 +89,18 @@ export const UserIcon = styled(AiOutlineUser)<Props>`
         top: 0.3rem;
     }
 `
-export const PasswordIcon = styled(TiLockClosedOutline)<Props>`
+export const PasswordIcon = styled(AiOutlineUnlock)<Props>`
     position: absolute;
     transition: ease 300ms;
     right: ${({icons}) => icons ? "6%" : "-13%" };
     top: 1.1vh;
     font-size: 32px;
     @media screen and (max-width: 1440px){
-        top: 0.6rem;
+        top: 0.5rem;
         font-size: 30px;
+    }
+    @media screen and (max-with: 1366px) {
+        top: 0.35rem;
     }
     @media screen and (max-width: 1024px){
         right: ${({icons}) => icons ? "3%" : "-10%" };
