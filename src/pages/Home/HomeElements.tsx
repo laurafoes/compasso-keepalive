@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Compasso from '../../assets/img/bola-logoCompasso.svg';
+import Compasso from '../../assets/img/bola-LogoCompasso.svg';
 import { footerBackground, homeBackground, mainColor } from '../../assets/styles/variables';
 
 export const Container = styled.div`
