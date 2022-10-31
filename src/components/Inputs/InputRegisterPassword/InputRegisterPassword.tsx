@@ -1,10 +1,10 @@
 import { useEffect, useContext } from 'react';
 import { UserInfoContext } from '../../../common/context/UserInfo';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { PropsUserContext } from '../../interfaces/UserInfo';
 import { Container, Input, PasswordIcon } from '../InputElements';
 import { passwordContext } from '../../../common/context/Password';
 import { PropsPasswordContext } from '../../interfaces/Password';
+import { AiOutlineUnlock } from 'react-icons/ai';
 
 export const InputRegisterPassword = () => {
     const { 
@@ -76,7 +76,7 @@ export const InputRegisterPassword = () => {
             >
             </Input>
             <PasswordIcon icons={icons.registerPassword}>
-                <FontAwesomeIcon icon="fa-regular fa-lock-keyhole" />
+                <AiOutlineUnlock />
             </PasswordIcon>
         </Container>
     )

@@ -1,8 +1,8 @@
 import { useEffect, useContext } from 'react';
 import { UserInfoContext } from '../../../common/context/UserInfo';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { PropsUserContext } from '../../interfaces/UserInfo';
 import { Container, ErrorMessage, Input, PasswordIcon, SuccessMessage } from '../InputElements';
+import { AiOutlineUnlock } from 'react-icons/ai';
 
 export const InputLoginPassword = () => {
     const { 
@@ -27,7 +27,7 @@ export const InputLoginPassword = () => {
                 user={userInfo.password}
             />
             <PasswordIcon icons={icons.password}>
-                <FontAwesomeIcon icon="fa-regular fa-lock-keyhole" />
+                <AiOutlineUnlock />
             </PasswordIcon>
             <ErrorMessage>
                 {loginPageTitle === 'Login' ? error : ''}
