@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import { AiOutlineUser, AiOutlineUnlock } from 'react-icons/ai';
-import { TiLockClosedOutline } from 'react-icons/ti';
 import { errorColor, validPassword } from '../../assets/styles/variables';
 
 interface Props {
     errorExists?: boolean,
     icons?: boolean,
     user?: string,
-    placeholder?: string
 }
 
 export const Container = styled.div`
@@ -16,7 +14,7 @@ export const Container = styled.div`
     position: relative;
 `
 
-export const Input = styled.input<Props>`
+export const InputElement = styled.input<Props>`
     width: 100%;
     border-color: ${({errorExists}) => errorExists ? errorColor : 'white' };
     border-width: 1px;
@@ -29,7 +27,8 @@ export const Input = styled.input<Props>`
     height: 5.5vh;
     padding-left: 1rem;
     padding-right: 4rem;
-    font-size: ${({user}) => !user ? '16px' : '56px'};
+    font-size: 16px;
+    /* font-size: ${({user}) => !user ? '16px' : '56px'}; */
     &::placeholder {
         color: white;
     }
@@ -82,7 +81,6 @@ export const UserIcon = styled(AiOutlineUser)<Props>`
         font-size: 20px;
         top: 20%;
     }
-    //rever esse!
     @media screen and (max-width: 915px) and (orientation: landscape) {
         right: ${({icons}) => icons ? "5%" : "-10%" };
         font-size: 20px;

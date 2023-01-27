@@ -1,18 +1,20 @@
-import { InputUser } from '../../components/Inputs/InputUser/InputUser';
-import { InputRegisterPassword } from '../Inputs/InputRegisterPassword/InputRegisterPassword';
 import { Form, FormWrapper, ButtonWrapper, Title } from './LoginFormElements';
 import { Button } from '../Button';
 import { useContext, } from 'react';
 import { PropsUserContext } from '../interfaces/UserInfo';
 import { UserInfoContext } from '../../common/context/UserInfo';
-import { InputConfirmPassword } from '../Inputs/InputConfirmPassword';
 import { PasswordRequirements } from '../PasswordRequirements';
 import { LoginMessage } from '../LoginMessage';
-import { InputName } from '../Inputs/InputName';
-import { InputLoginPassword } from '../Inputs/InputLoginPassword/InputLoginPassword';
+import Input from '../Input';
+import { ErrorMessage, SuccessMessage } from '../Input/InputElements';
 
 export const LoginForm = () => {
-    const { loginPageTitle, setRegistered } = useContext<PropsUserContext>(UserInfoContext);
+    const { 
+        error,
+        logged,
+        loginPageTitle, 
+        setRegistered
+     } = useContext<PropsUserContext>(UserInfoContext);
     const paginaDeLogin = loginPageTitle === 'Cadastro';
 
     if(!loginPageTitle) {
@@ -22,12 +24,51 @@ export const LoginForm = () => {
     return(
         <Form>
             <FormWrapper>
-                <Title>{loginPageTitle}</Title>
-                {paginaDeLogin ? <InputName /> : ''}
-                <InputUser />
-                {paginaDeLogin ? <InputRegisterPassword /> : <InputLoginPassword />}
-                {paginaDeLogin ? <InputConfirmPassword /> : ''}
-                {paginaDeLogin ? <PasswordRequirements /> : ''}
+                <Title>
+                    { loginPageTitle }
+                </Title>
+                { paginaDeLogin ? 
+                    <Input 
+                        type='text' 
+                        placeholder='Nome' 
+                        inputName='nome' 
+                    /> 
+                : null }
+                <Input
+                    type='text' 
+                    placeholder='E-mail' 
+                    inputName='email' 
+                />
+                { paginaDeLogin ? 
+                    <Input
+                        type='password' 
+                        placeholder='Senha' 
+                        inputName='registerPassword' 
+                        className='RegisterPassWordInput' 
+                    /> 
+                : <Input
+                    type='password'
+                    placeholder='Senha'
+                    inputName='password'
+                    className='PasswordInput'
+                />}
+                { paginaDeLogin ? 
+                    <Input 
+                        type='password'
+                        placeholder='Confirmar senha'
+                        inputName='confirmPassword'
+                        className='ConfirmPassword'
+                    /> 
+                : null }
+                { paginaDeLogin ? 
+                    <PasswordRequirements /> 
+                : null }
+                 <ErrorMessage>
+                    { loginPageTitle === 'Login' ? error : '' }
+                </ErrorMessage>
+                <SuccessMessage>
+                    { logged ? 'Usuário autenticado com sucesso! Aguarde o redirecionamento' : '' }
+                </SuccessMessage>
             </FormWrapper>
             <ButtonWrapper>
                 <Button />
