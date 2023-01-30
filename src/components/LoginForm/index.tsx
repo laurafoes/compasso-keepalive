@@ -1,6 +1,6 @@
 import { Form, FormWrapper, ButtonWrapper, Title } from './LoginFormElements';
 import { Button } from '../Button';
-import { useContext, } from 'react';
+import { useContext, useEffect, } from 'react';
 import { PropsUserContext } from '../interfaces/UserInfo';
 import { UserInfoContext } from '../../common/context/UserInfo';
 import { PasswordRequirements } from '../PasswordRequirements';
@@ -8,18 +8,23 @@ import { LoginMessage } from '../LoginMessage';
 import Input from '../Input';
 import { ErrorMessage, SuccessMessage } from '../Input/InputElements';
 
-export const LoginForm = () => {
+interface LoginFormProps {
+    isLoginPage: boolean
+}
+
+export const LoginForm = ({ isLoginPage }: LoginFormProps) => {
     const { 
         error,
         logged,
         loginPageTitle, 
         setRegistered
      } = useContext<PropsUserContext>(UserInfoContext);
-    const paginaDeLogin = loginPageTitle === 'Cadastro';
 
-    if(!loginPageTitle) {
-        setRegistered(true);
-    }
+     useEffect(() =>{
+         if(!isLoginPage) {
+             setRegistered(true);
+         }
+     }, [])
 
     return(
         <Form>
@@ -27,7 +32,7 @@ export const LoginForm = () => {
                 <Title>
                     { loginPageTitle }
                 </Title>
-                { paginaDeLogin ? 
+                { !isLoginPage ? 
                     <Input 
                         type='text' 
                         placeholder='Nome' 
@@ -39,7 +44,7 @@ export const LoginForm = () => {
                     placeholder='E-mail' 
                     inputName='email' 
                 />
-                { paginaDeLogin ? 
+                { !isLoginPage ? 
                     <Input
                         type='password' 
                         placeholder='Senha' 
@@ -52,7 +57,7 @@ export const LoginForm = () => {
                     inputName='password'
                     className='PasswordInput'
                 />}
-                { paginaDeLogin ? 
+                { !isLoginPage ? 
                     <Input 
                         type='password'
                         placeholder='Confirmar senha'
@@ -60,14 +65,14 @@ export const LoginForm = () => {
                         className='ConfirmPassword'
                     /> 
                 : null }
-                { paginaDeLogin ? 
+                { isLoginPage ? 
                     <PasswordRequirements /> 
                 : null }
                  <ErrorMessage>
-                    { loginPageTitle === 'Login' ? error : '' }
+                    { isLoginPage ? error : null }
                 </ErrorMessage>
                 <SuccessMessage>
-                    { logged ? 'Usuário autenticado com sucesso! Aguarde o redirecionamento' : '' }
+                    { logged ? 'Usuário autenticado com sucesso! Aguarde o redirecionamento' : null }
                 </SuccessMessage>
             </FormWrapper>
             <ButtonWrapper>
