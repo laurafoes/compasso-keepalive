@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { auth } from "../../servcies/FirebaseConfig"
+import { auth } from "../../services/FirebaseConfig"
 import { Button } from "./FooterBtnElements"
 
 interface Props {
@@ -13,7 +13,6 @@ export const FooterBtn = ({ variant, children }: Props) => {
         if(variant) {
             auth.signOut();
             navigateTo('/');
-
         }
     }
 

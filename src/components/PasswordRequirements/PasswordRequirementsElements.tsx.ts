@@ -23,11 +23,12 @@ export const Title = styled.p`
     color: ${mainColor};
     line-height: 20px;
 `
+
 export const Item = styled.div`
     display: flex;
     align-items: center;
 `
-//receber props para alerar a cor
+
 export const Valid = styled(BsCheck)`
     fill: ${validPassword};
     font-size: 28px;

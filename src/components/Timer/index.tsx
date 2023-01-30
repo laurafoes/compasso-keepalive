@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../../servcies/FirebaseConfig';
+import { auth } from '../../services/FirebaseConfig';
 import { Container, Mensagem, Contador, TimerWrapper } from "./TimerElements"
 
 export const Timer = () => {

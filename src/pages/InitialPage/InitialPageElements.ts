@@ -69,7 +69,6 @@ export const FormTitle = styled.div `
 export const Banner = styled.div `
     width: 50%;
     align-self: stretch;
-    /* min-height: 100vh; */
     background-image: url(${logo_image});
     background-position: right top;
     background-size: cover;

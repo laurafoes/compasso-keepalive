@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from 'firebase/auth';
 import { Navigate } from 'react-router-dom';
-import { auth } from '../servcies/FirebaseConfig';
+import { auth } from '../services/FirebaseConfig';
 
 export const PrivateRoute = ({ children }: any) => {
 
